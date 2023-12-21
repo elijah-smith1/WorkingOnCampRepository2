@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "EBBC0A0D-F3AA-4259-A3A9-C15306575638"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "05AA87C0-A319-4679-B523-E3178D2C5FD1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "OnCampApp/Data/PostData.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "Post"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "05AA87C0-A319-4679-B523-E3178D2C5FD1 - eff1ab59d2854359"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OnCampApp.Post.CodingKeys.init(rawValue: Swift.String) -&gt; Swift.Optional&lt;OnCampApp.Post.CodingKeys&gt;"
+                  moduleName = "OnCampApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elijahsmith/Documents/Camper/OnCampApp/OnCampApp/Data/PostData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "148">
+               </Location>
+               <Location
+                  uuid = "05AA87C0-A319-4679-B523-E3178D2C5FD1 - a10140ced60f30f6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OnCampApp.Post.CodingKeys.rawValue.getter : Swift.String"
+                  moduleName = "OnCampApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elijahsmith/Documents/Camper/OnCampApp/OnCampApp/Data/PostData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "05AA87C0-A319-4679-B523-E3178D2C5FD1 - 60fb5d2e97c8425a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OnCampApp.Post.init(from: Swift.Decoder) throws -&gt; OnCampApp.Post"
+                  moduleName = "OnCampApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elijahsmith/Desktop/OnCampApp/OnCampApp/Data/PostData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "232">
+               </Location>
+               <Location
+                  uuid = "05AA87C0-A319-4679-B523-E3178D2C5FD1 - 60fb5d2e97c8425a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "OnCampApp.Post.init(from: Swift.Decoder) throws -&gt; OnCampApp.Post"
+                  moduleName = "OnCampApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/elijahsmith/Desktop/OnCampApp/OnCampApp/Data/PostData.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
