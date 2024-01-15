@@ -70,6 +70,7 @@ struct OnCampAppApp: App {
     var body: some Scene {
         WindowGroup {
             if Auth.auth().currentUser?.uid != nil {
+                /*Signoutbutton*/
                 tabBar()
                     .environmentObject(UserData())
                 // Use the existing userData

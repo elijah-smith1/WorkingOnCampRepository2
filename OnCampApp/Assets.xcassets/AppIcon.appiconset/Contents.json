@@ -1,14 +1,14 @@
 {
-  "images" : [
+  "images": [
     {
-      "filename" : "Screenshot 2023-10-09 at 5.39.52 PM.png",
-      "idiom" : "universal",
-      "platform" : "ios",
-      "size" : "1024x1024"
+      "filename": "Screenshot 2023-10-09 at 5.39.52 PM.png",
+      "idiom": "universal",
+      "platform": "ios",
+      "size": "1024x1024"
     }
   ],
-  "info" : {
-    "author" : "xcode",
-    "version" : 1
+  "info": {
+    "author": "xcode",
+    "version": 1
   }
 }

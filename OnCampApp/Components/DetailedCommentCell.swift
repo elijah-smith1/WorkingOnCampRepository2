@@ -30,52 +30,62 @@ class CommentCellViewModel: ObservableObject {
 struct DetailedCommentCell: View {
     @StateObject var viewModel = CommentCellViewModel()
     @StateObject var postData = PostData()
-    let comment : Comment
+    let comment: Comment
+    
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading, spacing: 8) {
             HStack {
                 CircularProfilePictureView()
-                    .frame(width: 40, height: 40)
-                    .padding(.leading, 18.0)
-                
+                    .frame(width: 32, height: 32)
+                    .padding(.leading, 16.0)
+
                 Text(viewModel.username.isEmpty ? "Loading..." : viewModel.username)
-                
+                    .font(.footnote)
+                    .fontWeight(.semibold)
+
                 Spacer()
-                
-                Text("2m ago")
-                    .padding(.trailing, 18.0)
-                
-            }
-            .padding(.top, 18.0)
-            
-            HStack{
-                Text(comment.text)
-                    .padding(.leading, 18.0)
-                
-                Spacer()
-                
-                Text("1900")
-                Image(systemName: "heart")
-                Image(systemName: "paperplane")
-                    .padding(.trailing, 18.0)
-            }
-            .padding(.top, 5.0)
-            
-            HStack {
-                Text("View Replies (3)...")
+
+                Text("timestamp here")
                     .font(.footnote)
                     .foregroundColor(.gray)
-                    .padding(.leading, 18.0)
+                    .padding(.trailing, 16.0)
+            }
+            .padding(.top, 8.0)
+
+            Text(comment.text)
+                .font(.body)
+                .padding(.leading, 16.0)
+
+            HStack {
+                Spacer()
+
+                Text("like count here")
+                    .font(.caption)
+                    .foregroundColor(.gray)
+                    .padding(.trailing, 16.0)
+
+                Image(systemName: "heart")
+                    .imageScale(.small)
+
+                Image(systemName: "paperplane")
+                    .imageScale(.small)
+                    .padding(.trailing, 16.0)
+            }
+            .padding(.top, 5.0)
+
+            HStack {
+                Text("View Replies here")
+                    .font(.footnote)
+                    .foregroundColor(.gray)
+                    .padding(.leading, 16.0)
                     .padding(.top, 3.0)
                 Spacer()
             }
-            
-            
+
             Divider()
-            
-            Spacer()
         }
+        .padding(.horizontal)
     }
 }
 

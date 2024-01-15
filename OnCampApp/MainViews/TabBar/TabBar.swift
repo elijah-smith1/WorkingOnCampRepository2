@@ -13,6 +13,7 @@ struct tabBar: View {
     @State private var selectedtab = 4
     @StateObject var Tabviewmodel = tabViewModel()
     @StateObject var messages = inboxViewModel()
+    
     var body: some View {
         if let user = Tabviewmodel.userData.currentUser {
             TabView(selection: $selectedtab) {
@@ -59,6 +60,9 @@ struct tabBar: View {
                 if Tabviewmodel.userData.currentUser == nil {
                     Tabviewmodel.fetchCurrentUserIfNeeded()
                 }
+                    
+
+                    
             }
             .navigationBarBackButtonHidden()
         }

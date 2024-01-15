@@ -55,15 +55,17 @@ struct CreateAccount: View {
                 }
 
                 Form {
-                    Section(header: Text("Profile Information")) {
-                        TextField("Username (Required)", text: $userData.username)
-                        TextField("Biography (Max 150 characters)", text: $userData.bio)
-                            .frame(height: 100)
-                        Picker("Status", selection: $userData.status) {
-                            ForEach(userData.statuses, id: \.self) { Text($0) }
-                        }
-                        Picker("School", selection: $userData.school) {
-                            ForEach(userData.colleges, id: \.self) { Text($0) }
+                    ScrollView{
+                        Section(header: Text("Profile Information")) {
+                            TextField("Username (Required)", text: $userData.username)
+                            TextField("Biography (Max 150 characters)", text: $userData.bio)
+                                .frame(height: 100)
+                            Picker("Status", selection: $userData.status) {
+                                ForEach(userData.statuses, id: \.self) { Text($0) }
+                            }
+                            Picker("School", selection: $userData.school) {
+                                ForEach(userData.colleges, id: \.self) { Text($0) }
+                            }
                         }
                     }
                 }
@@ -89,6 +91,7 @@ struct CreateAccount: View {
             }
             .padding()
             .navigationBarHidden(true)
+            
         }
         .accentColor(.blue)
         .padding(.bottom, 5)

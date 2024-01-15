@@ -9,7 +9,8 @@ import SwiftUI
 import Firebase
 import FirebaseFirestore
 
-struct DetailedPosts: View {
+
+ struct DetailedPosts: View {
     var post: Post
     @State private var commentText: String = ""
     @State private var comments: [Comment] = []
@@ -17,33 +18,55 @@ struct DetailedPosts: View {
 
     var body: some View {
         let postId = post.id!
-        VStack {
-            DetailedPostCell(post: post)
+        VStack(alignment: .leading, spacing: 12) {
+            ScrollView {
+                DetailedPostCell(post: post)
 
-            ForEach(comments, id: \.self) { comment in
-                DetailedCommentCell(comment: comment)
+                ForEach(comments, id: \.self) { comment in
+                    DetailedCommentCell(comment: comment)
+                }
+
+                Divider()
             }
 
-            Rectangle()
-                .foregroundColor(Color(.separator))
-                .frame(width: UIScreen.main.bounds.width, height: 0.75)
-
             HStack {
-                TextField("Reply...", text: $commentText)
-                    .textFieldStyle(PlainTextFieldStyle())
+                Image(systemName: "quote.bubble")
+                    .foregroundColor(Color("LTBL"))
+                    .font(.system(size: 22))
+                    .padding(.leading, 8)
+
+                TextField("Post your reply", text: $commentText, onCommit: {
+                    PostData.shared.createComment(postID: postId, commentText: commentText)
+                    DispatchQueue.main.async {
+                           commentText = ""
+                       }
+                    print(commentText)
+                })
+
                     .font(.body)
-                    .frame(minHeight: 30)
+                    .foregroundColor(.primary)
+                    .padding(.vertical, 8)
+                    .padding(.horizontal, 12)
+                    .background(Color("TweetBackground")) // Use a custom color for the background
+                    .cornerRadius(15)
+
+                Spacer()
 
                 Button(action: {
                     PostData.shared.createComment(postID: postId, commentText: commentText)
+                    commentText = ""
                     print(commentText)
                 }) {
-                    Text("Send")
+                    Text("Post")
                         .bold()
                         .foregroundColor(Color("LTBL"))
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 8)
+                        .background(Color("TweetButtonBackground")) // Use a custom color for the button background
+                        .cornerRadius(15)
                 }
+                .padding(.trailing, 8)
             }
-            .padding(.bottom, 8)
             .padding(.horizontal)
         }
         .onAppear {
@@ -56,6 +79,8 @@ struct DetailedPosts: View {
         }
     }
 }
+
+
 
 
 //struct DetailedPosts_Previews: PreviewProvider {

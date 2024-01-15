@@ -11,14 +11,14 @@ import FirebaseFirestore
 
 
 struct UserLikesView: View {
-    @StateObject var viewmodel = ProfileViewModel()
-    @State var userPosts = [Post]()
+    let viewModel : ProfileViewModel
+    
     
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {
-                    ForEach(viewmodel.userLikes, id: \.id) { post in
+                    ForEach(viewModel.userLikes, id: \.id) { post in
                         PostCell(post: post)
                     
                     }
@@ -33,9 +33,9 @@ struct UserLikesView: View {
 
     }
 
-struct UserLikesViewPreviews: PreviewProvider {
-    static var previews: some View {
-        UserLikesView()
-          
-    }
-}
+//struct UserLikesViewPreviews: PreviewProvider {
+//    static var previews: some View {
+//        UserLikesView()
+//          
+//    }
+//}

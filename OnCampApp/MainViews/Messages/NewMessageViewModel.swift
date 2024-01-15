@@ -60,6 +60,34 @@ class NewMessageViewModel: ObservableObject {
            return newChatId
        }
 
+    func createGroupChat(for selectedUserIds: [String]) async throws -> String {
+           let db = Firestore.firestore()
+
+           // Check if a group chat already exists with the selected users
+          
+           // No existing group chat found, create a new one
+           var newChatRef: DocumentReference?
+           let chatData: [String: Any] = ["participants": selectedUserIds]
+           newChatRef = try await db.collection("Chats").addDocument(data: chatData)
+
+           guard let newChatId = newChatRef?.documentID else {
+               throw NSError(domain: "FirestoreError", code: 0, userInfo: [NSLocalizedDescriptionKey: "Failed to create group chat document"])
+           }
+
+           // Add chat reference in each user's 'chats' subcollection
+           for selectedUserId in selectedUserIds {
+               let selectedUserChatData = ["chatId": newChatId]
+               try await db.collection("Users").document(selectedUserId).collection("chats").document(newChatId).setData(selectedUserChatData)
+           }
+
+           return newChatId
+       }
+    
+    
+    
+    
+    
+
          // Replace with actual logged in user ID
         
         

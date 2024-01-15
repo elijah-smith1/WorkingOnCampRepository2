@@ -12,11 +12,7 @@ struct CreateMessage: View {
     @Binding var showChatView: Bool
     @Environment(\.presentationMode) var mode
     @State private var searchText = ""
-    
-   
-    
-    
-    
+
     var filteredUsers: [User] {
         if searchText.isEmpty {
             return viewmodel.users
@@ -24,29 +20,43 @@ struct CreateMessage: View {
             return viewmodel.users.filter { $0.username.localizedCaseInsensitiveContains(searchText) }
         }
     }
-    
+
     var body: some View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {
                     ForEach(filteredUsers, id: \.username) { user in
-                       
-                            UserChatCell(user: user)
+                        UserChatCell(user: user)
                         Divider()
-                        
                     }
                 }
             }
-           
             .navigationTitle("New Message")
+            .padding()
+
+            // Button for creating a group chat
+            Button(action: {
+              
+            }) {
+                NavigationLink(destination: CreateGroupChat()) {
+                    Text("Create Group Chat")
+                        .font(.headline)
+                        .foregroundColor(.white)
+                        .padding()
+                        .background(Color.blue)
+                        .cornerRadius(10)
+                    
+                }
+
+            }
+            .padding()
         }
         .searchable(text: $searchText, prompt: "Search Users")
-            .onSubmit(of: .search, {
-
-            })
+        .onSubmit(of: .search, {
+            // Handle search submission if needed
+        })
     }
 }
-
 
 struct CreateMessage_Previews: PreviewProvider {
     static var previews: some View {

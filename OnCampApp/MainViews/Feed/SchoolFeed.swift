@@ -8,8 +8,22 @@
 import SwiftUI
 
 struct SchoolFeed: View {
+    @ObservedObject var viewModel = feedViewModel()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        ScrollView {
+                        VStack(spacing: 0) {
+                            ForEach(viewModel.Posts, id: \.id) { post in
+                                PostCell(post: post)
+                            }
+                        }
+        }.onAppear{
+            Task{
+                do{
+                    try await viewModel.fetchPublicPosts()
+                }
+            }
+        }
     }
 }
 

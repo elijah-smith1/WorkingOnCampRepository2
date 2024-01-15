@@ -6,7 +6,7 @@ struct Profile: View {
     @EnvironmentObject var userData: UserData
     @State private var selectedFilter: ProfileTabFilter = .posts
     @Namespace var animation
-    
+    @State var viewModel = ProfileViewModel()
     private let user: User
     
     init(user: User) {
@@ -24,7 +24,7 @@ struct Profile: View {
                 VStack(spacing: 20) {
                     Spacer()
                     ProfileHeaderCell(user: user)
-                    
+                    Divider()
                     // Filter Bar
                     HStack {
                         ForEach(ProfileTabFilter.allCases, id: \.self) { filter in
@@ -35,11 +35,11 @@ struct Profile: View {
                     // Content based on selected filter
                     switch selectedFilter {
                     case .posts:
-                        UserPostsView() // Replace with actual view
+                        UserPostsView(viewModel: viewModel) // Replace with actual view
                     case .reposts:
-                        UserRepostsView(user: user) // Replace with actual view
+                        UserRepostsView(viewModel: viewModel) // Replace with actual view
                     case .likes:
-                        UserLikesView() // Replace with actual view
+                        UserLikesView(viewModel: viewModel) // Replace with actual view
                     }
                 }
                 .padding(.horizontal)
@@ -82,8 +82,9 @@ struct FilterBarButton: View {
 // Replace these with your actual views for posts, reposts, and likes
 
 struct UserRepostsView: View {
-    let user: User
-    var body: some View { Text("User's Reposts") }
+    let viewModel: ProfileViewModel
+    
+    var body: some View { Text("User's Reposts for ") }
 }
 
 

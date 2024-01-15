@@ -12,7 +12,8 @@ import FirebaseFirestore
 
 
 struct UserPostsView: View {
-    @StateObject var viewModel = ProfileViewModel()
+    let viewModel : ProfileViewModel
+    
     
     var body: some View {
         NavigationStack {
@@ -23,19 +24,15 @@ struct UserPostsView: View {
                     }
                 }
             }
-            .onAppear {
-                Task{
-                    try await  viewModel.fetchUserPostData()
-                }
-            }
+           
         }
     }
 }
 
 
-struct UserPostsViewPreviews: PreviewProvider {
-    static var previews: some View {
-        UserPostsView()
-          
-    }
-}
+//struct UserPostsViewPreviews: PreviewProvider {
+//    static var previews: some View {
+//        UserPostsView()
+//          
+//    }
+//}

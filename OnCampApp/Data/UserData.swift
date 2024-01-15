@@ -129,6 +129,46 @@ class UserData : ObservableObject {
         // Initialize Firebase and listen to authentication state changes
     }
     
+   static func getFollowingDocumentIds() async throws -> [String] {
+      // Replace with your actual constant
+
+        // Reference to the Firestore collection
+        let collectionReference = Firestore.firestore().collection("Users").document(loggedInUid!).collection("Following")
+
+        // Fetch documents from the collection
+        do {
+            let querySnapshot = try await collectionReference.getDocuments()
+
+            // Extract document IDs from the querySnapshot
+            let documentIds = querySnapshot.documents.map { $0.documentID }
+            
+            return documentIds
+        } catch {
+            // Propagate the error
+            throw error
+        }
+    }
+    static func getFavoriteDocumentIds() async throws -> [String] {
+       // Replace with your actual constant
+
+         // Reference to the Firestore collection
+         let collectionReference = Firestore.firestore().collection("Users").document(loggedInUid!).collection("Favorites")
+
+         // Fetch documents from the collection
+         do {
+             let querySnapshot = try await collectionReference.getDocuments()
+
+             // Extract document IDs from the querySnapshot
+             let documentIds = querySnapshot.documents.map { $0.documentID }
+             
+             return documentIds
+         } catch {
+             // Propagate the error
+             throw error
+         }
+     }
+
+    
     func checkFollowingAndFavoriteStatus(selectedUid: String) async throws -> String  {
         let db = Firestore.firestore()
 
@@ -182,7 +222,7 @@ class UserData : ObservableObject {
 
         let loggedInUserRef = db.collection("Users").document(loggedInUid)
         let selectedUserRef = db.collection("Users").document(selectedUid)
-
+        
         let loggedInUserFollowingRef = loggedInUserRef.collection("Following")
         let loggedInUserFavoritesRef = loggedInUserRef.collection("Favorites")
         let selectedUserFollowersRef = selectedUserRef.collection("Followers")

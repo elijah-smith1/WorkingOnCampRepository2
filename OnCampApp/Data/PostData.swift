@@ -67,16 +67,40 @@ class PostData: ObservableObject {
         return postIds
     }
     
-    static func fetchPostsforUID(Uid: String) async throws -> [String] {
-        
+    static func fetchPostsForIds(for userIds: [String]) async throws -> [String] {
+        // Reference to the Firestore collection "Posts"
+        let collectionReference = Firestore.firestore().collection("Posts")
+        var allPostIds: [String] = []
+        do {
+            // Fetch the last 25 posts for each user ID in the array
+            for userId in userIds {
+                let querySnapshot = try await collectionReference
+                    .whereField("postedBy", isEqualTo: userId)
+                    .limit(to: 25)
+                    .getDocuments()
 
+                // Extract post IDs and add them to the result array
+                let postIds = querySnapshot.documents.map { $0.documentID }
+                allPostIds.append(contentsOf: postIds)
+            }
+
+            return allPostIds
+        } catch {
+            // Propagate the error
+            throw error
+        }
+    }
+    
+
+    
+   static func fetchPostsByUser(userId: String) async throws -> [String] {
         var postIds = [String]()
 
-        // Ensure that 'Userdb' is a reference to the Firestore collection containing user documents
-        // For example, if your users collection is named "users", it should be initialized as follows:
-        // let Userdb = Firestore.firestore().collection("users")
+        // Ensure that 'Postsdb' is a reference to the Firestore collection containing posts
+        // For example, if your posts collection is named "Posts", it should be initialized as follows:
+        let Postsdb = Firestore.firestore().collection("Posts")
 
-        let snapshot = try await Userdb.document(Uid).collection("Posts").getDocuments()
+        let snapshot = try await Postsdb.whereField("postedBy", isEqualTo: userId).getDocuments()
 
         for document in snapshot.documents {
             postIds.append(document.documentID)
@@ -85,6 +109,7 @@ class PostData: ObservableObject {
         print(postIds)
         return postIds
     }
+    
     static func fetchRepostsforUID(Uid: String) async throws -> [String] {
         var postIds = [String]()
 
@@ -282,7 +307,7 @@ class PostData: ObservableObject {
 
     func listenToComments(forPost postId: String, completion: @escaping ([Comment]) -> Void) -> ListenerRegistration {
         let db = Firestore.firestore()
-        let commentsRef = db.collection("posts").document(postId).collection("comments")
+        let commentsRef = db.collection("Posts").document(postId).collection("comments")
 
         let listener = commentsRef
             .order(by: "timeSent", descending: false)

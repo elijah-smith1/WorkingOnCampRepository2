@@ -8,67 +8,73 @@
 import SwiftUI
 import Firebase
 struct DetailedPostCell: View {
- 
-    
-    var post : Post
+    var post: Post
+
     var body: some View {
         let postId = post.id
-        
-        VStack {
-            
+
+        VStack(alignment: .leading, spacing: 8) {
             HStack {
                 CircularProfilePictureView()
                     .frame(width: 40, height: 40)
-                
-                
-                Text(post.username)
-                
+
+                VStack(alignment: .leading, spacing: 2) {
+                    Text(post.username)
+                        .font(.headline)
+
+                    Text("15m ago")
+                        .font(.caption)
+                        .foregroundColor(Color.gray)
+                }
+
                 Spacer()
-                
-                Text("15m ago")
-                
             }
-            .padding(.top, 18.0)
-            
-           
+            .padding(.top, 16)
+
             Text(post.postText)
                 .multilineTextAlignment(.leading)
-                .padding(.top, 30.0)
-            
-            
-            
-            HStack() {
-                Button {
-                    // Handle button action here
-                    PostData.shared.likePost(postID: postId!)
-                } label: {
-                    Image(systemName: "heart")
-                }
-                
-                Button {
-                    PostData.shared.repostPost(postID: postId!)
-                } label: {
-                    Image(systemName: "arrow.rectanglepath")
-                }
-                Button {
-                    // Handle button action here
-                } label: {
-                    Image(systemName: "paperplane")
-                }
-                Spacer()
-                
-                Text("\(post.likeCount) likes   \(post.repostCount) Reposts   \(post.commentCount) Comments")
-                    .font(.footnote)
+                .padding(.top, 8)
 
-                   
+            HStack(spacing: 20) {
+                PostInteractionButton(imageName: "heart", action: {
+                    PostData.shared.likePost(postID: postId!)
+                })
+
+                PostInteractionButton(imageName: "arrow.rectanglepath", action: {
+                    PostData.shared.repostPost(postID: postId!)
+                })
+
+                PostInteractionButton(imageName: "paperplane", action: {
+                    // Handle button action here
+                })
+
+                Spacer()
+
+                Text("\(post.likeCount) likes • \(post.repostCount) reposts • \(post.commentCount) comments")
+                    .font(.caption)
+                    .foregroundColor(Color.gray)
             }
-            .padding([.top, .leading], 18.0)
-            .foregroundColor(Color("LTBL"))
-            
+            .padding([.top, .leading], 16)
+
             Divider()
+        }
+        .foregroundColor(Color("LTBL"))
+    }
+}
+
+struct PostInteractionButton: View {
+    var imageName: String
+    var action: () -> Void
+
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: imageName)
+                .foregroundColor(Color("LTBL"))
+                .font(.system(size: 22))
         }
     }
 }
+
 
 //struct DetailedPostCell_Previews: PreviewProvider {
 //    static var previews: some View {

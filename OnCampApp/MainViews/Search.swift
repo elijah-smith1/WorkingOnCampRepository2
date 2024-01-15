@@ -10,6 +10,24 @@ import SwiftUI
 struct Search: View {
     @StateObject var viewmodel = searchViewModel()
     @State private var searchText = ""
+
+    var body: some View {
+        NavigationStack {
+            VStack {
+                SearchBar(searchText: $searchText)
+                
+                List {
+                    ForEach(filteredUsers, id: \.username) { user in
+                        UserCell(user: user)
+                            
+                    }
+                }
+                .listStyle(PlainListStyle())
+            }
+            .navigationTitle("Search")
+        }
+    }
+
     var filteredUsers: [User] {
         if searchText.isEmpty {
             return viewmodel.users
@@ -17,34 +35,24 @@ struct Search: View {
             return viewmodel.users.filter { $0.username.localizedCaseInsensitiveContains(searchText) }
         }
     }
-    
-    var body: some View {
-        NavigationStack {
-            ScrollView {
-                VStack(spacing: 0) {
-                    ForEach(filteredUsers, id: \.username) { user in
-                            
-                            UserCell(user: user)
-                            .padding(.bottom)
-                            .padding(.top)
-                            .padding(.leading)
-                        Divider()
-                        
-                    }
-                }
-            } .searchable(text: $searchText, prompt: "Search Users")
-                .onSubmit(of: .search, {
-
-                })
-           
-            .navigationTitle("Search")
-        }
-       
-    }
 }
 
 struct Search_Previews: PreviewProvider {
     static var previews: some View {
         Search()
+    }
+}
+
+struct SearchBar: View {
+    @Binding var searchText: String
+
+    var body: some View {
+        HStack {
+            TextField("Search Users", text: $searchText)
+                .padding(8)
+                .background(Color(.systemGray6))
+                .cornerRadius(8)
+                .padding(.horizontal)
+        }
     }
 }
