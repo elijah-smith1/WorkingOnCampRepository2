@@ -134,7 +134,7 @@ class VendorData: ObservableObject{
                     "description": vendor.description,
                     "schools": vendor.schools,
                     "name": vendor.name,
-                    "image": vendor.image ?? "",
+                    "image": vendor.image,
                     "category": vendor.category,
                     "rating": vendor.rating
 
@@ -151,7 +151,7 @@ class VendorData: ObservableObject{
                     "description": vendor.description,
                     "schools": vendor.schools,
                     "name": vendor.name,
-                    "image": vendor.image ?? "",
+                    "image": vendor.image,
                     "category": vendor.category,
                     "rating": vendor.rating
                 ]) { err in

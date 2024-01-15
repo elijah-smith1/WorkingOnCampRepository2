@@ -14,7 +14,7 @@ struct VendorPreview: View {
     var body: some View {
         NavigationLink(destination: VendorDetail(vendor: vendor)) {
             VStack(spacing: 8) {
-                KFImage(URL(string: vendor.image ?? ""))
+                KFImage(URL(string: vendor.image ))
                     .resizable()
                     .placeholder {
                         Image("placeholder") // Replace with your placeholder image
