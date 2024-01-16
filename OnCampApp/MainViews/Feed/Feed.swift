@@ -23,7 +23,17 @@ struct Feed: View {
                     }
                 }
             }
-          
+            .onAppear {
+                            if selectedFeed == "School" {
+                                Task {
+                                    do {
+                                        try await viewmodel.fetchPublicPosts()
+                                    } catch {
+                                        print("Error fetching public posts: \(error.localizedDescription)")
+                                    }
+                                }
+                            }
+                        }
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Menu(selectedFeed) {

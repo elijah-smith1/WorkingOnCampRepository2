@@ -7,6 +7,9 @@
 
 import SwiftUI
 import Firebase
+import Kingfisher
+
+
 struct DetailedPostCell: View {
     var post: Post
 
@@ -34,6 +37,16 @@ struct DetailedPostCell: View {
             Text(post.postText)
                 .multilineTextAlignment(.leading)
                 .padding(.top, 8)
+            
+            if let mediaUrl = post.mediaUrl, let url = URL(string: mediaUrl) {
+                                      KFImage(url)
+                                          .resizable()
+                                          .aspectRatio(contentMode: .fill)
+                                          .frame(width: 300, height: 200)
+                                          .clipped()
+                                          .cornerRadius(8)
+                                          .padding(.top, 5)
+                                  }
 
             HStack(spacing: 20) {
                 PostInteractionButton(imageName: "heart", action: {

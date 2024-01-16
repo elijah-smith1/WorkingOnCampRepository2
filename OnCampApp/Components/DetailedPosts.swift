@@ -12,6 +12,7 @@ import FirebaseFirestore
 
  struct DetailedPosts: View {
     var post: Post
+     
     @State private var commentText: String = ""
     @State private var comments: [Comment] = []
     @State private var listener: ListenerRegistration?
