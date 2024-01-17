@@ -50,7 +50,7 @@ struct ProfileHeaderCell: View {
                     
                     Spacer()
                     
-                    CircularProfilePictureView()
+                    CircularProfilePictureView(profilePictureURL: user?.pfpUrl)
                         .frame(width: 64, height: 64)
                 }
                 

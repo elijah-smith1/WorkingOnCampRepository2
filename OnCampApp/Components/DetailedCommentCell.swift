@@ -32,12 +32,11 @@ struct DetailedCommentCell: View {
     @StateObject var postData = PostData()
     let comment: Comment
     
-    
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                CircularProfilePictureView()
-                    .frame(width: 32, height: 32)
+                CircularProfilePictureView(/*profilePictureURL: comment.pfpUrl*/)
+                    .frame(width: 64, height: 64)
                     .padding(.leading, 16.0)
 
                 Text(viewModel.username.isEmpty ? "Loading..." : viewModel.username)

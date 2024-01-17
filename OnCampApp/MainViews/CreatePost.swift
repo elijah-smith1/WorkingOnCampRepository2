@@ -17,6 +17,7 @@ struct CreatePost: View {
     @FocusState private var isCreatingPost: Bool
     @State private var showingImagePicker = false
     @State private var inputImage: UIImage?
+    let user: User
 
     private var characterCount: Int {
         return postText.count
@@ -43,7 +44,7 @@ struct CreatePost: View {
             .padding(.horizontal)
 
             HStack {
-                CircularProfilePictureView()
+                CircularProfilePictureView(profilePictureURL: user.pfpUrl!)
                     .frame(width: 40, height: 40)
                 
                 Button(action: {
@@ -116,7 +117,7 @@ struct CreatePost: View {
             }
 
             Button(action: {
-                createPost()
+                createPost(pfpUrl: user.pfpUrl!, school: user.school)
             }) {
                 Text("Post")
                     .foregroundColor(.white)
@@ -156,12 +157,13 @@ struct CreatePost: View {
     }
 
 
-    private func createPost() {
+    private func createPost(pfpUrl: String, school: String) {
         let db = Firestore.firestore()
         let storage = Storage.storage()
         let postRef = db.collection("Posts").document()
         let posterUid = Auth.auth().currentUser!.uid
         let postId = postRef.documentID
+        
         
         // Function to upload image and create post
         func uploadImageAndCreatePost() {
@@ -178,7 +180,9 @@ struct CreatePost: View {
                         "commentCount": 0,
                         "repostCount": 0,
                         "postId": postId,
-                        "username": username
+                        "username": username,
+                        "pfpUrl": pfpUrl,
+                        "school": school
                     ]
                     
                     // If an image is selected, upload it first
@@ -230,8 +234,8 @@ struct CreatePost: View {
     
 }
 
-struct CreatePost_Previews: PreviewProvider {
-    static var previews: some View {
-        CreatePost()
-    }
-}
+//struct CreatePost_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CreatePost()
+//    }
+//}

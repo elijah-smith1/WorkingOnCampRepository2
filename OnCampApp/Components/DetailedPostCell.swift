@@ -18,8 +18,8 @@ struct DetailedPostCell: View {
 
         VStack(alignment: .leading, spacing: 8) {
             HStack {
-                CircularProfilePictureView()
-                    .frame(width: 40, height: 40)
+                CircularProfilePictureView(profilePictureURL: post.pfpUrl)
+                    .frame(width: 64, height: 64)
 
                 VStack(alignment: .leading, spacing: 2) {
                     Text(post.username)

@@ -42,7 +42,7 @@ struct tabBar: View {
                         
                     }
                     .tag(2)
-                CreatePost()
+                CreatePost(user: user)
                     .tabItem {
                         Image(systemName: selectedtab == 3 ? "plus.bubble.fill" : "plus.bubble")
                             .environment(\.symbolVariants, selectedtab == 3 ? .fill : .none)

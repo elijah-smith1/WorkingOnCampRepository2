@@ -10,10 +10,10 @@ import SwiftUI
 import Kingfisher
 
 struct CircularProfilePictureView: View {
-    var profilePictureURL: URL?
+    var profilePictureURL: String?
 
     var body: some View {
-        if let url = profilePictureURL {
+        if let urlString = profilePictureURL, let url = URL(string: urlString) {
             KFImage(url)
                 .resizable()
                 .scaledToFill()
@@ -28,8 +28,8 @@ struct CircularProfilePictureView: View {
     }
 }
 
-struct CircularProfilePictureView_Previews: PreviewProvider {
-    static var previews: some View {
-        CircularProfilePictureView(profilePictureURL: URL(string: "https://example.com/profile.jpg"))
-    }
-}
+//struct CircularProfilePictureView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CircularProfilePictureView(profilePictureURL: URL(string: "https://example.com/profile.jpg"))
+//    }
+//}

@@ -27,8 +27,8 @@ struct PostCell: View {
         NavigationLink(destination: DetailedPosts(post: post)) {
             VStack {
                 HStack(alignment: .top, spacing: 12) {
-                    CircularProfilePictureView()
-                        .frame(width: 40, height: 40)
+                    CircularProfilePictureView(profilePictureURL: post.pfpUrl)
+                        .frame(width: 64, height: 64)
                     
                     VStack(alignment: .leading, spacing: 4) {
                         HStack {

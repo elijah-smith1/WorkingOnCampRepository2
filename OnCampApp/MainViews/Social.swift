@@ -30,7 +30,7 @@ struct Social: View {
                         }
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: Notifications()) {
+                    NavigationLink(destination: NotificationsView()) {
                         Image(systemName: "bell")
                             .font(.system(size: 18))
                     }

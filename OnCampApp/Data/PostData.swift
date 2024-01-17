@@ -22,6 +22,7 @@ struct Post: Codable, Hashable, Identifiable {  // Conform to Codable and Identi
     var commentCount: Int
     var username: String
     var mediaUrl: String?
+    var pfpUrl: String?
     
     enum CodingKeys: String, CodingKey {  // Define coding keys if they differ from your property names
         case postText = "content"
@@ -32,6 +33,7 @@ struct Post: Codable, Hashable, Identifiable {  // Conform to Codable and Identi
         case commentCount
         case username
         case mediaUrl
+        case pfpUrl
     }
     
    
@@ -155,6 +157,7 @@ class PostData: ObservableObject {
             
             // Fetch the mediaUrl
             let mediaUrl = data["mediaUrl"] as? String
+            let pfpUrl = data["pfpUrl"] as? String
 
             if let postText = data["content"] as? String,
                let postedBy = data["postedBy"] as? String,
@@ -175,7 +178,8 @@ class PostData: ObservableObject {
                     repostCount: repostCount,
                     commentCount: commentCount,
                     username: username,
-                    mediaUrl: mediaUrl // Add the media URL to the Post object
+                    mediaUrl: mediaUrl, // Add the media URL to the Post object
+                    pfpUrl: pfpUrl
                 )
             
                 posts.append(post)

@@ -15,7 +15,7 @@ struct User: Identifiable, Hashable, Codable {
         var status: String
         var school: String
         var interests: [String]?
-        var profilePictureURL: String?
+        var pfpUrl: String?
         var followerCount: Int?
         var favorites: Int?
         var followingCount: Int?

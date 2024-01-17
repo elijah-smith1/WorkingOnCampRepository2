@@ -9,11 +9,12 @@ import SwiftUI
 
 struct UserCell: View {
     let user: User
+    
     var body: some View {
         NavigationLink(destination: Profile(user: user)){
         HStack {
-            CircularProfilePictureView()
-                .frame(width: 40, height: 40)
+            CircularProfilePictureView(profilePictureURL: user.pfpUrl)
+                .frame(width: 64, height: 64)
             
             VStack(alignment: .leading, spacing: 4) {
                 Text(user.username)
