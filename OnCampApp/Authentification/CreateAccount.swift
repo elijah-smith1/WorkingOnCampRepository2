@@ -155,8 +155,6 @@ struct CreateAccount: View {
             "school": userData.school,
             "status": userData.status,
             "isVendor": userData.isVendor,
-            "followingCount": userData.followingCount ?? 0,
-            "followerCount": userData.followerCount ?? 0,
             "pfpUrl": pfpUrl
         ] as [String: Any]
 

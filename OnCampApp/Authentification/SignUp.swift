@@ -1,10 +1,3 @@
-//
-//  SignUp.swift
-//  OnCampApp
-//
-//  Created by Michael Washington on 10/9/23.
-//
-
 import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
@@ -13,7 +6,8 @@ import Firebase
 struct SignUp: View {
     @Environment(\.colorScheme) var colorScheme
     @ObservedObject var viewModel = AuthViewModel()
-    
+    @State private var showingAlert = false
+    @State private var alertMessage: String = ""
     @State private var email: String = ""
     @State private var uid: String = ""
     @State private var password: String = ""
@@ -21,13 +15,12 @@ struct SignUp: View {
     @State private var signUpSuccesful: Bool = false
     
     var body: some View {
-        if signUpSuccesful{
+        if signUpSuccesful {
             CreateAccount(uid: self.uid)
         } else {
             content
         }
     }
-    
     
     var content: some View {
         NavigationView {
@@ -67,18 +60,22 @@ struct SignUp: View {
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
                         .padding(.horizontal, 24)
-                    
                 }
                 
                 Spacer()
                 Button(action: {
-                    if password == confirmedpassword {
-                        SignUp()
-                    }else{
-                    
-                        print("signup failed" )
-                    }
-                    
+                    if !isEmailValid(email) {
+                                            self.alertMessage = "Please enter a valid email address."
+                                            self.showingAlert = true
+                                        } else if password.count < 8 {
+                                            self.alertMessage = "Password must be at least 8 characters long."
+                                            self.showingAlert = true
+                                        } else if password != confirmedpassword {
+                                            self.alertMessage = "Passwords do not match."
+                                            self.showingAlert = true
+                                        } else {
+                                            SignUp()
+                                        }
                 }) {
                     Text("Sign Up")
                         .font(.subheadline)
@@ -88,13 +85,16 @@ struct SignUp: View {
                         .cornerRadius(8)
                         .background(.blue)
                 }
+                .alert(isPresented: $showingAlert) {
+                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Got it!")))
+                }
                 
                 Spacer()
                 
                 Divider()
                 
                 NavigationLink(destination: SignIn()) {
-                    HStack{
+                    HStack {
                         Text("Already have an account?")
                         Text("Sign In")
                             .fontWeight(.semibold)
@@ -107,27 +107,27 @@ struct SignUp: View {
                     Auth.auth().addStateDidChangeListener { auth, user in
                         if user != nil {
                             guard let currentUser = Auth.auth().currentUser else {
-                                // Handle error
-                                print ("error getting current user")
+                                print("error getting current user")
                                 return
                             }
                             self.uid = currentUser.uid
                             signUpSuccesful.toggle()
-                            print ("uid is ", self.uid)
+                            print("uid is \(self.uid)")
                         }
                     }
                 }
             }
         }
     }
+
     func SignUp() {
         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
             if let error = error {
-                // Handle signup error
-                print("Signup error: \(error)")
+                self.alertMessage = error.localizedDescription
+                self.showingAlert = true
+                print("Signup error: \(error.localizedDescription)")
             } else {
                 guard let currentUser = Auth.auth().currentUser else {
-                    // Handle error
                     print("Error getting current user")
                     return
                 }
@@ -138,10 +138,15 @@ struct SignUp: View {
     }
 }
 
+private func isEmailValid(_ email: String) -> Bool {
+        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
+        return emailPredicate.evaluate(with: email)
+    }
 
 struct SignUpView: PreviewProvider {
     static var previews: some View {
-        Group{
+        Group {
             SignUp()
                 .preferredColorScheme(.light)
             SignUp()

@@ -13,17 +13,14 @@ import Kingfisher
 
 
 struct PostCell: View {
-   
-
+    @State private var isLiked: Bool = false
+    var post: Post
+    var user: User?
     
-    
-    var post : Post
-    
-   
     var body: some View {
         let postId = post.id
         //let postedDate = postData.formatTimestamp(post.postedAt)
-
+        
         NavigationLink(destination: DetailedPosts(post: post)) {
             VStack {
                 HStack(alignment: .top, spacing: 12) {
@@ -40,7 +37,7 @@ struct PostCell: View {
                             Text(PostData.shared.relativeTimeString(from: post.postedAt))
                                 .font(.caption)
                                 .foregroundColor(Color("LTBL"))
-
+                            
                             Button {
                                 // Handle button action here
                             } label: {
@@ -54,24 +51,27 @@ struct PostCell: View {
                             .multilineTextAlignment(.leading)
                         
                         if let mediaUrl = post.mediaUrl, let url = URL(string: mediaUrl) {
-                                                  KFImage(url)
-                                                      .resizable()
-                                                      .aspectRatio(contentMode: .fill)
-                                                      .frame(width: 300, height: 200)
-                                                      .clipped()
-                                                      .cornerRadius(8)
-                                                      .padding(.top, 5)
-                                              }
+                            KFImage(url)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(width: 300, height: 200)
+                                .clipped()
+                                .cornerRadius(8)
+                                .padding(.top, 5)
+                        }
                         
                         
                         HStack(spacing: 16) {
                             Button {
-                                // Handle button action here
-                                
-                                PostData.shared.likePost(postID: postId!)
-                                
+                                isLiked.toggle() // Toggle the liked status
+                                if isLiked {
+                                    PostData.shared.likePost(postID: post.id!)
+                                } else {
+                                    // Implement unlike post logic
+                                }
                             } label: {
-                                Image(systemName: "heart")
+                                Image(systemName: isLiked ? "heart.fill" : "heart")
+                                    .foregroundColor(isLiked ? .red : Color("LTBL"))
                             }
                             Button {
                                 // Handle button action here

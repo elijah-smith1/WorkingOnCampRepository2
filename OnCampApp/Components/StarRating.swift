@@ -1,18 +1,34 @@
-//
-//  StarRating.swift
-//  OnCampApp
-//
-//  Created by Michael Washington on 1/17/24.
-//
-
 import SwiftUI
 
 struct StarRating: View {
+    var vendor: Vendor
+    var maximumRating: Int = 5
+    let onImage = Image(systemName: "star.fill")
+    let offImage = Image(systemName: "star")
+    let halfImage = Image(systemName: "star.leadinghalf.filled")
+    
+    func image(for number: Int) -> Image {
+        if Double(number) > vendor.rating {
+            return offImage
+        } else if Double(number) > vendor.rating - 0.5 {
+            return halfImage
+        } else {
+            return onImage
+        }
+    }
+
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            ForEach(1...maximumRating, id: \.self) { number in
+                self.image(for: number)
+                    .foregroundColor(.yellow)
+            }
+        }
     }
 }
 
-#Preview {
-    StarRating()
-}
+//struct StarRating_Previews: PreviewProvider {
+//    static var previews: some View {
+//        StarRating(vendor: Vendor(id: nil, description: "Test Description", schools: ["Test School"], name: "Test Vendor", image: "test_image", category: "Test Category", rating: 3.5, featured: false))
+//    }
+//}

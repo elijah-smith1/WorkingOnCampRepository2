@@ -37,7 +37,7 @@ struct Profile: View {
                     case .posts:
                         UserPostsView(viewModel: viewModel) // Replace with actual view
                     case .reposts:
-                        UserRepostsView(viewModel: viewModel) // Replace with actual view
+                         UserRepostsView(viewModel: viewModel) // Replace with actual view
                     case .likes:
                         UserLikesView(viewModel: viewModel) // Replace with actual view
                     }

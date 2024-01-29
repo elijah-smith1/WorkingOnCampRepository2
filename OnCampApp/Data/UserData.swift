@@ -45,36 +45,12 @@ class UserData : ObservableObject {
        
         
         self.colleges = [
+            "Select a College",
             "Morehouse College",
             "Spelman College",
             "Clark Atlanta University",
-            "University of Georgia (UGA)",
-            "Georgia State University",
-            "Georgia Institute of Technology (Georgia Tech)",
-            "Emory University",
-            "Georgia Southern University",
-            "Kennesaw State University",
-            "Mercer University",
-            "Agnes Scott College",
-            "Savannah State University",
-            "Georgia College & State University",
-            "Columbus State University",
-            "Georgia Southern University",
-            "Valdosta State University",
-            "Augusta University",
-            "University of West Georgia",
-            "Georgia Southwestern State University",
-            "Georgia Gwinnett College",
-            "Oglethorpe University",
-            "Berry College",
-            "Piedmont College",
-            "Reinhardt University",
-            "Wesleyan College",
-            "University of North Georgia",
-            "Albany State University",
-            "Fort Valley State University",
-            "Middle Georgia State University",
-            "Clayton State University"
+            "Georgia State",
+            "Georgia Tech"
         ] // List of colleges in Georgia
 
         self.statuses = [
@@ -117,8 +93,7 @@ class UserData : ObservableObject {
          "Staying in","Going out", "Eating out","Drinking",
         "Smoking", "Sports", "Reading", "Movies",
         "Music", "Gaming", "Writing", "Food",
-        "Fashion", "Cars", "Parties",
-        "Staying home", "Traveling", "Cooking", "Socializing",
+        "Fashion", "Cars", "Parties", "Traveling", "Cooking", "Socializing",
         "Hiking", "Exercise", "Learning", "Concerts",
         "Art", "Tech", "Nature", "Dancing",
         "Photography", "Pets", "Adventure", "Beach",
@@ -303,8 +278,36 @@ class UserData : ObservableObject {
         }
     }
 
-        
 
+    // Async function to fetch a user by userId
+    static func fetchUser(by userId: String) async throws -> User? {
+        let db = Firestore.firestore()
+        let usersCollection = db.collection("users")
+
+        // Attempt to retrieve the document
+        let documentSnapshot = try await usersCollection.document(userId).getDocument()
+
+        // Check if the document exists
+        guard documentSnapshot.exists, let user = try? documentSnapshot.data(as: User.self) else {
+            // Handle the case where the document does not exist or data can't be decoded
+            return nil
+        }
+
+        // Return the User object
+        return user
+    }
+    
+    func fetchUser(for userId: String) async throws -> User {
+        let userDocument = Userdb.document(userId)
+        
+        let documentSnapshot = try await userDocument.getDocument()
+        
+        guard let user = try documentSnapshot.data(as: User.self) else {
+            throw NSError(domain: "UserDataService", code: 0, userInfo: [NSLocalizedDescriptionKey: "User not found"])
+        }
+        
+        return user
+    }
 }
 
 

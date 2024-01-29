@@ -33,7 +33,7 @@ struct tabBar: View {
                     }
                     .onAppear {selectedtab = 1}
                     .tag(1)
-                Marketplace()
+                Marketplace(user: user)
                     .tabItem {
                         Image(systemName: selectedtab == 2 ? "bag.fill" : "bag")
                             .environment(\.symbolVariants, selectedtab == 2 ? .fill : .none)

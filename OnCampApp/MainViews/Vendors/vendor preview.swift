@@ -5,6 +5,13 @@
 //  Created by Elijah Smith on 12/28/23.
 //
 
+//
+//  vendor preview.swift
+//  OnCampApp
+//
+//  Created by Elijah Smith on 12/28/23.
+//
+
 import SwiftUI
 import Kingfisher
 
@@ -14,7 +21,7 @@ struct VendorPreview: View {
     var body: some View {
         NavigationLink(destination: VendorDetail(vendor: vendor)) {
             VStack(spacing: 8) {
-                KFImage(URL(string: vendor.image ))
+                KFImage(URL(string: vendor.headerImage ))
                     .resizable()
                     .placeholder {
                         Image("placeholder") // Replace with your placeholder image
@@ -34,10 +41,10 @@ struct VendorPreview: View {
                             .font(.headline)
 
                         Text(vendor.category)
-                            .font(.caption)
+                            .font(.callout)
                         
-                        Text(vendor.description)
-                            .font(.caption)
+                        StarRating(vendor: vendor)
+
                     }
                     
                     Spacer()
@@ -45,24 +52,26 @@ struct VendorPreview: View {
                     // Pricing or other info
                     VStack(alignment: .trailing) {
                         Text("Avg. Price")
-                            .font(.caption)
+                            .font(.callout)
 
                         Text("$10 - $20")
-                            .font(.caption)
+                            .font(.callout)
                     }
                 }
             }
             .padding()
             .background(Color.white)
             .cornerRadius(10)
-            .shadow(radius: 5)
+            .shadow(color: .blue, radius: 2, x: 0, y: 4)
+
         }
     }
 }
 
 
-struct VendorPreview_Previews: PreviewProvider {
-    static var previews: some View {
-        VendorPreview(vendor: Vendor(description: "Description", schools: ["Morehouse","Spelman","Clark Atlanta"], name: "New Hairstylist", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.3, featured: false))
-    }
-}
+
+//struct VendorPreview_Previews: PreviewProvider {
+//    static var previews: some View {
+//        VendorPreview(vendor: Vendor(description: "Description", schools: ["Morehouse","Spelman","Clark Atlanta"], name: "New Hairstylist", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.3, featured: false))
+//    }
+//}

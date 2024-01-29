@@ -1,0 +1,2187 @@
+diff --git a/OnCampApp.xcodeproj/project.pbxproj b/OnCampApp.xcodeproj/project.pbxproj
+index 2c7c166..5c334a5 100644
+--- a/OnCampApp.xcodeproj/project.pbxproj
++++ b/OnCampApp.xcodeproj/project.pbxproj
+@@ -52,9 +52,22 @@
+ 		A6807D5E2AF0AFEF0088E934 /* EventData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6807D5D2AF0AFEF0088E934 /* EventData.swift */; };
+ 		A6807D602AF0C81F0088E934 /* NewMessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6807D5F2AF0C81F0088E934 /* NewMessageViewModel.swift */; };
+ 		A6807D622AF0C8A00088E934 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6807D612AF0C8A00088E934 /* Constants.swift */; };
++		A68803462B5ACF5F00E1B741 /* Trending.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68803452B5ACF5F00E1B741 /* Trending.swift */; };
++		A68803482B5ACF6A00E1B741 /* Spotlight.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68803472B5ACF6A00E1B741 /* Spotlight.swift */; };
++		A688034A2B5ACF7500E1B741 /* BulletinBoard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68803492B5ACF7500E1B741 /* BulletinBoard.swift */; };
++		A688034C2B5AD5D600E1B741 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688034B2B5AD5D600E1B741 /* Settings.swift */; };
++		A688034E2B5AD7B000E1B741 /* DeleteAccountButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A688034D2B5AD7B000E1B741 /* DeleteAccountButton.swift */; };
++		A68803512B5AE8E700E1B741 /* eventViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A68803502B5AE8E700E1B741 /* eventViewModel.swift */; };
+ 		A69B73CC2AEC0E00008DE77E /* ProfileHeaderCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B73CB2AEC0E00008DE77E /* ProfileHeaderCell.swift */; };
+ 		A69B73CE2AED5A55008DE77E /* Events.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B73CD2AED5A55008DE77E /* Events.swift */; };
+ 		A69B73D22AEEF45A008DE77E /* EventPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69B73D12AEEF45A008DE77E /* EventPreview.swift */; };
++		A6A2B9E82B586A6F004BA4AA /* StarRating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9E72B586A6F004BA4AA /* StarRating.swift */; };
++		A6A2B9EA2B587668004BA4AA /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9E92B587668004BA4AA /* Menu.swift */; };
++		A6A2B9EC2B587951004BA4AA /* SideMenuHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9EB2B587951004BA4AA /* SideMenuHeader.swift */; };
++		A6A2B9EE2B587968004BA4AA /* SideMenuOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9ED2B587968004BA4AA /* SideMenuOptions.swift */; };
++		A6A2B9F02B587B19004BA4AA /* SideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9EF2B587B19004BA4AA /* SideMenu.swift */; };
++		A6A2B9F22B588170004BA4AA /* MarketPlaceViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9F12B588170004BA4AA /* MarketPlaceViewModel.swift */; };
++		A6A2B9F42B58817E004BA4AA /* VendorViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6A2B9F32B58817E004BA4AA /* VendorViewModel.swift */; };
+ 		A6CBB1782ADE3B16001437C7 /* Messages.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBB1772ADE3B16001437C7 /* Messages.swift */; };
+ 		A6CBB17A2ADE416C001437C7 /* MessageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBB1792ADE416C001437C7 /* MessageData.swift */; };
+ 		A6CBB17C2ADEFA28001437C7 /* UserPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6CBB17B2ADEFA28001437C7 /* UserPostView.swift */; };
+@@ -153,9 +166,22 @@
+ 		A6807D5D2AF0AFEF0088E934 /* EventData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventData.swift; sourceTree = "<group>"; };
+ 		A6807D5F2AF0C81F0088E934 /* NewMessageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageViewModel.swift; sourceTree = "<group>"; };
+ 		A6807D612AF0C8A00088E934 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
++		A68803452B5ACF5F00E1B741 /* Trending.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trending.swift; sourceTree = "<group>"; };
++		A68803472B5ACF6A00E1B741 /* Spotlight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Spotlight.swift; sourceTree = "<group>"; };
++		A68803492B5ACF7500E1B741 /* BulletinBoard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletinBoard.swift; sourceTree = "<group>"; };
++		A688034B2B5AD5D600E1B741 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
++		A688034D2B5AD7B000E1B741 /* DeleteAccountButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteAccountButton.swift; sourceTree = "<group>"; };
++		A68803502B5AE8E700E1B741 /* eventViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = eventViewModel.swift; sourceTree = "<group>"; };
+ 		A69B73CB2AEC0E00008DE77E /* ProfileHeaderCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderCell.swift; sourceTree = "<group>"; };
+ 		A69B73CD2AED5A55008DE77E /* Events.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Events.swift; sourceTree = "<group>"; };
+ 		A69B73D12AEEF45A008DE77E /* EventPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventPreview.swift; sourceTree = "<group>"; };
++		A6A2B9E72B586A6F004BA4AA /* StarRating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarRating.swift; sourceTree = "<group>"; };
++		A6A2B9E92B587668004BA4AA /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
++		A6A2B9EB2B587951004BA4AA /* SideMenuHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuHeader.swift; sourceTree = "<group>"; };
++		A6A2B9ED2B587968004BA4AA /* SideMenuOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuOptions.swift; sourceTree = "<group>"; };
++		A6A2B9EF2B587B19004BA4AA /* SideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenu.swift; sourceTree = "<group>"; };
++		A6A2B9F12B588170004BA4AA /* MarketPlaceViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MarketPlaceViewModel.swift; sourceTree = "<group>"; };
++		A6A2B9F32B58817E004BA4AA /* VendorViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VendorViewModel.swift; sourceTree = "<group>"; };
+ 		A6CBB1772ADE3B16001437C7 /* Messages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Messages.swift; sourceTree = "<group>"; };
+ 		A6CBB1792ADE416C001437C7 /* MessageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageData.swift; sourceTree = "<group>"; };
+ 		A6CBB17B2ADEFA28001437C7 /* UserPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostView.swift; sourceTree = "<group>"; };
+@@ -280,6 +306,8 @@
+ 			children = (
+ 				A6CBE8D72AD8F65F00379839 /* Marketplace.swift */,
+ 				5D8B1B0B2B3E3D0300446692 /* vendor preview.swift */,
++				A6A2B9F12B588170004BA4AA /* MarketPlaceViewModel.swift */,
++				A6A2B9F32B58817E004BA4AA /* VendorViewModel.swift */,
+ 			);
+ 			path = Vendors;
+ 			sourceTree = "<group>";
+@@ -294,6 +322,14 @@
+ 			path = SocialChatPreviews;
+ 			sourceTree = "<group>";
+ 		};
++		A688034F2B5AE8D500E1B741 /* viewModels */ = {
++			isa = PBXGroup;
++			children = (
++				A68803502B5AE8E700E1B741 /* eventViewModel.swift */,
++			);
++			path = viewModels;
++			sourceTree = "<group>";
++		};
+ 		A6CBE8C22AD8EE8800379839 /* Profile */ = {
+ 			isa = PBXGroup;
+ 			children = (
+@@ -358,6 +394,7 @@
+ 		A6EB1C072AD3310600A7A89F /* OnCampApp */ = {
+ 			isa = PBXGroup;
+ 			children = (
++				A688034F2B5AE8D500E1B741 /* viewModels */,
+ 				5D415D972AFA97EC00D22779 /* Models */,
+ 				A6EB1C5A2AD4C2CF00A7A89F /* Data */,
+ 				A6EB1C4D2AD4B15D00A7A89F /* Authentification */,
+@@ -441,6 +478,16 @@
+ 				A643F3132AF996E70063AF42 /* VendorDetail.swift */,
+ 				A643F3152AF997020063AF42 /* ProductCard.swift */,
+ 				A643F3172AF997120063AF42 /* SmallProductCard.swift */,
++				A6A2B9E72B586A6F004BA4AA /* StarRating.swift */,
++				A6A2B9E92B587668004BA4AA /* Menu.swift */,
++				A6A2B9EB2B587951004BA4AA /* SideMenuHeader.swift */,
++				A6A2B9ED2B587968004BA4AA /* SideMenuOptions.swift */,
++				A6A2B9EF2B587B19004BA4AA /* SideMenu.swift */,
++				A68803452B5ACF5F00E1B741 /* Trending.swift */,
++				A68803472B5ACF6A00E1B741 /* Spotlight.swift */,
++				A68803492B5ACF7500E1B741 /* BulletinBoard.swift */,
++				A688034B2B5AD5D600E1B741 /* Settings.swift */,
++				A688034D2B5AD7B000E1B741 /* DeleteAccountButton.swift */,
+ 			);
+ 			path = Components;
+ 			sourceTree = "<group>";
+@@ -640,8 +687,10 @@
+ 			isa = PBXSourcesBuildPhase;
+ 			buildActionMask = 2147483647;
+ 			files = (
++				A688034E2B5AD7B000E1B741 /* DeleteAccountButton.swift in Sources */,
+ 				5DDFCC602B52EA8C00F4630A /* PublicFeed.swift in Sources */,
+ 				A6807D5C2AF0934F0088E934 /* DetailedEvent.swift in Sources */,
++				A6A2B9EC2B587951004BA4AA /* SideMenuHeader.swift in Sources */,
+ 				5D3AA09D2B0912A400AB8517 /* UserCell.swift in Sources */,
+ 				A6FBD3052ADF148E00BC0F60 /* CreateMessage.swift in Sources */,
+ 				A69B73D22AEEF45A008DE77E /* EventPreview.swift in Sources */,
+@@ -658,35 +707,44 @@
+ 				A6FBD3142AE1F29B00BC0F60 /* CMCells.swift in Sources */,
+ 				A6EB1C552AD4BC9200A7A89F /* CreateAccount.swift in Sources */,
+ 				A6EB1C4C2AD4A7F500A7A89F /* Landing.swift in Sources */,
++				A6A2B9EE2B587968004BA4AA /* SideMenuOptions.swift in Sources */,
+ 				5D415D9B2AFAAD1800D22779 /* ProfileViewModel.swift in Sources */,
+ 				A69B73CE2AED5A55008DE77E /* Events.swift in Sources */,
+ 				A6CBB1782ADE3B16001437C7 /* Messages.swift in Sources */,
+ 				A6FBD3122ADF3D6000BC0F60 /* CustomChatInput.swift in Sources */,
+ 				A6CBE8E02AD8FAE600379839 /* PostData.swift in Sources */,
+ 				A6EB1C092AD3310600A7A89F /* OnCampAppApp.swift in Sources */,
++				A68803482B5ACF6A00E1B741 /* Spotlight.swift in Sources */,
+ 				A643F3162AF997020063AF42 /* ProductCard.swift in Sources */,
+ 				A6FBD30C2ADF258B00BC0F60 /* ChatBubble.swift in Sources */,
++				A6A2B9E82B586A6F004BA4AA /* StarRating.swift in Sources */,
+ 				A6FBD2FF2ADF080600BC0F60 /* CMPreviewBox.swift in Sources */,
+ 				A643F3142AF996E70063AF42 /* VendorDetail.swift in Sources */,
+ 				A6CBE8DC2AD8F6DA00379839 /* Search.swift in Sources */,
+ 				A6FBD31A2AE758D700BC0F60 /* DetailedCommentCell.swift in Sources */,
+ 				A643F3122AF996C40063AF42 /* CategoryList.swift in Sources */,
+ 				A66B3D012AF9998A003150C9 /* Marketplace.swift in Sources */,
++				A68803512B5AE8E700E1B741 /* eventViewModel.swift in Sources */,
+ 				A6FBD3102ADF2E2200BC0F60 /* Chat.swift in Sources */,
+ 				A643F3102AF996B20063AF42 /* CartProductCard.swift in Sources */,
+ 				A6FBD3012ADF0EB200BC0F60 /* MessageCell.swift in Sources */,
+ 				A643F31A2AF9973B0063AF42 /* Product.swift in Sources */,
+ 				A6EB1C4F2AD4B39C00A7A89F /* SignIn.swift in Sources */,
+ 				5D864B5C2B029BD200B7BB7F /* tabBarViewModel.swift in Sources */,
++				A688034C2B5AD5D600E1B741 /* Settings.swift in Sources */,
++				A6A2B9F02B587B19004BA4AA /* SideMenu.swift in Sources */,
+ 				A6FBD3162AE74B3F00BC0F60 /* DetailedPosts.swift in Sources */,
+ 				5DDCB72B2B07BBEB0093ED3B /* inboxViewModel.swift in Sources */,
+ 				5D7E6D632AFAE7090020D9EA /* LaunchView.swift in Sources */,
+ 				A6CBE8CF2AD8EFCE00379839 /* PostCell.swift in Sources */,
+ 				A69B73CC2AEC0E00008DE77E /* ProfileHeaderCell.swift in Sources */,
++				A6A2B9EA2B587668004BA4AA /* Menu.swift in Sources */,
++				A688034A2B5ACF7500E1B741 /* BulletinBoard.swift in Sources */,
+ 				A6CBE8D42AD8F5FE00379839 /* TabBar.swift in Sources */,
+ 				A6EB1C592AD4C10E00A7A89F /* AuthData.swift in Sources */,
+ 				A6CBE8D62AD8F64F00379839 /* CreatePost.swift in Sources */,
+ 				A6FBD3182AE7588400BC0F60 /* DetailedPostCell.swift in Sources */,
++				A6A2B9F22B588170004BA4AA /* MarketPlaceViewModel.swift in Sources */,
+ 				A6CBE8D12AD8F09100379839 /* UserChatCell.swift in Sources */,
+ 				5D3AA09B2B09107200AB8517 /* searchViewModel.swift in Sources */,
+ 				A6CBE8CD2AD8EF9F00379839 /* CircularProfilePicture.swift in Sources */,
+@@ -696,6 +754,7 @@
+ 				A6EB1C572AD4BF1100A7A89F /* SelectInterests.swift in Sources */,
+ 				A6FBD3082ADF19EC00BC0F60 /* MessagesTabBar.swift in Sources */,
+ 				A6FBD2FB2ADEFD3700BC0F60 /* Social.swift in Sources */,
++				A68803462B5ACF5F00E1B741 /* Trending.swift in Sources */,
+ 				A643F3182AF997120063AF42 /* SmallProductCard.swift in Sources */,
+ 				A6EB1C5E2AD4C3B000A7A89F /* imagePicker.swift in Sources */,
+ 				A6CBE8C62AD8EEC000379839 /* Profile.swift in Sources */,
+@@ -708,6 +767,7 @@
+ 				A6CBB17A2ADE416C001437C7 /* MessageData.swift in Sources */,
+ 				A6FBD3032ADF0EC900BC0F60 /* ChannelCell.swift in Sources */,
+ 				A6FBD2FD2ADF015000BC0F60 /* Notifications.swift in Sources */,
++				A6A2B9F42B58817E004BA4AA /* VendorViewModel.swift in Sources */,
+ 				A6FBD30A2ADF1BF600BC0F60 /* Channels.swift in Sources */,
+ 				A6EB1C512AD4B4C200A7A89F /* ForgotPassword.swift in Sources */,
+ 				A6CBE8C82AD8EEEC00379839 /* EditProfile.swift in Sources */,
+diff --git a/OnCampApp.xcodeproj/project.xcworkspace/xcuserdata/mikey.xcuserdatad/UserInterfaceState.xcuserstate b/OnCampApp.xcodeproj/project.xcworkspace/xcuserdata/mikey.xcuserdatad/UserInterfaceState.xcuserstate
+index 165030e..9f42985 100644
+Binary files a/OnCampApp.xcodeproj/project.xcworkspace/xcuserdata/mikey.xcuserdatad/UserInterfaceState.xcuserstate and b/OnCampApp.xcodeproj/project.xcworkspace/xcuserdata/mikey.xcuserdatad/UserInterfaceState.xcuserstate differ
+diff --git a/OnCampApp.xcodeproj/xcuserdata/mikey.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist b/OnCampApp.xcodeproj/xcuserdata/mikey.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+index c509e0c..fa6b5a5 100644
+--- a/OnCampApp.xcodeproj/xcuserdata/mikey.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
++++ b/OnCampApp.xcodeproj/xcuserdata/mikey.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
+@@ -387,5 +387,21 @@
+             </Locations>
+          </BreakpointContent>
+       </BreakpointProxy>
++      <BreakpointProxy
++         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
++         <BreakpointContent
++            uuid = "6DCE1D18-3A25-4690-B5AB-4569FF7CC181"
++            shouldBeEnabled = "Yes"
++            ignoreCount = "0"
++            continueAfterRunningActions = "No"
++            filePath = "OnCampApp/Components/EventPreview.swift"
++            startingColumnNumber = "9223372036854775807"
++            endingColumnNumber = "9223372036854775807"
++            startingLineNumber = "9"
++            endingLineNumber = "9"
++            landmarkName = "unknown"
++            landmarkType = "0">
++         </BreakpointContent>
++      </BreakpointProxy>
+    </Breakpoints>
+ </Bucket>
+diff --git a/OnCampApp/Authentification/CreateAccount.swift b/OnCampApp/Authentification/CreateAccount.swift
+index ad4c72b..0b645d5 100644
+--- a/OnCampApp/Authentification/CreateAccount.swift
++++ b/OnCampApp/Authentification/CreateAccount.swift
+@@ -155,8 +155,6 @@ struct CreateAccount: View {
+             "school": userData.school,
+             "status": userData.status,
+             "isVendor": userData.isVendor,
+-            "followingCount": userData.followingCount ?? 0,
+-            "followerCount": userData.followerCount ?? 0,
+             "pfpUrl": pfpUrl
+         ] as [String: Any]
+ 
+diff --git a/OnCampApp/Authentification/SignUp.swift b/OnCampApp/Authentification/SignUp.swift
+index 2a69943..1accc00 100644
+--- a/OnCampApp/Authentification/SignUp.swift
++++ b/OnCampApp/Authentification/SignUp.swift
+@@ -1,10 +1,3 @@
+-//
+-//  SignUp.swift
+-//  OnCampApp
+-//
+-//  Created by Michael Washington on 10/9/23.
+-//
+-
+ import SwiftUI
+ import FirebaseAuth
+ import FirebaseFirestore
+@@ -13,7 +6,8 @@ import Firebase
+ struct SignUp: View {
+     @Environment(\.colorScheme) var colorScheme
+     @ObservedObject var viewModel = AuthViewModel()
+-    
++    @State private var showingAlert = false
++    @State private var alertMessage: String = ""
+     @State private var email: String = ""
+     @State private var uid: String = ""
+     @State private var password: String = ""
+@@ -21,14 +15,13 @@ struct SignUp: View {
+     @State private var signUpSuccesful: Bool = false
+     
+     var body: some View {
+-        if signUpSuccesful{
++        if signUpSuccesful {
+             CreateAccount(uid: self.uid)
+         } else {
+             content
+         }
+     }
+     
+-    
+     var content: some View {
+         NavigationView {
+             VStack {
+@@ -67,18 +60,22 @@ struct SignUp: View {
+                         .background(Color(.systemGray6))
+                         .cornerRadius(10)
+                         .padding(.horizontal, 24)
+-                    
+                 }
+                 
+                 Spacer()
+                 Button(action: {
+-                    if password == confirmedpassword {
+-                        SignUp()
+-                    }else{
+-                    
+-                        print("signup failed" )
+-                    }
+-                    
++                    if !isEmailValid(email) {
++                                            self.alertMessage = "Please enter a valid email address."
++                                            self.showingAlert = true
++                                        } else if password.count < 8 {
++                                            self.alertMessage = "Password must be at least 8 characters long."
++                                            self.showingAlert = true
++                                        } else if password != confirmedpassword {
++                                            self.alertMessage = "Passwords do not match."
++                                            self.showingAlert = true
++                                        } else {
++                                            SignUp()
++                                        }
+                 }) {
+                     Text("Sign Up")
+                         .font(.subheadline)
+@@ -88,13 +85,16 @@ struct SignUp: View {
+                         .cornerRadius(8)
+                         .background(.blue)
+                 }
++                .alert(isPresented: $showingAlert) {
++                    Alert(title: Text("Error"), message: Text(alertMessage), dismissButton: .default(Text("Got it!")))
++                }
+                 
+                 Spacer()
+                 
+                 Divider()
+                 
+                 NavigationLink(destination: SignIn()) {
+-                    HStack{
++                    HStack {
+                         Text("Already have an account?")
+                         Text("Sign In")
+                             .fontWeight(.semibold)
+@@ -107,27 +107,27 @@ struct SignUp: View {
+                     Auth.auth().addStateDidChangeListener { auth, user in
+                         if user != nil {
+                             guard let currentUser = Auth.auth().currentUser else {
+-                                // Handle error
+-                                print ("error getting current user")
++                                print("error getting current user")
+                                 return
+                             }
+                             self.uid = currentUser.uid
+                             signUpSuccesful.toggle()
+-                            print ("uid is ", self.uid)
++                            print("uid is \(self.uid)")
+                         }
+                     }
+                 }
+             }
+         }
+     }
++
+     func SignUp() {
+         Auth.auth().createUser(withEmail: email, password: password) { authResult, error in
+             if let error = error {
+-                // Handle signup error
+-                print("Signup error: \(error)")
++                self.alertMessage = error.localizedDescription
++                self.showingAlert = true
++                print("Signup error: \(error.localizedDescription)")
+             } else {
+                 guard let currentUser = Auth.auth().currentUser else {
+-                    // Handle error
+                     print("Error getting current user")
+                     return
+                 }
+@@ -138,10 +138,15 @@ struct SignUp: View {
+     }
+ }
+ 
++private func isEmailValid(_ email: String) -> Bool {
++        let emailFormat = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
++        let emailPredicate = NSPredicate(format:"SELF MATCHES %@", emailFormat)
++        return emailPredicate.evaluate(with: email)
++    }
+ 
+ struct SignUpView: PreviewProvider {
+     static var previews: some View {
+-        Group{
++        Group {
+             SignUp()
+                 .preferredColorScheme(.light)
+             SignUp()
+diff --git a/OnCampApp/Components/DeleteAccountButton.swift b/OnCampApp/Components/DeleteAccountButton.swift
+index 28d17b6..595be95 100644
+--- a/OnCampApp/Components/DeleteAccountButton.swift
++++ b/OnCampApp/Components/DeleteAccountButton.swift
+@@ -2,17 +2,34 @@
+ //  DeleteAccountButton.swift
+ //  OnCampApp
+ //
+-//  Created by Michael Washington on 1/19/24.
++//  Created by Michael Washington on 10/13/23.
+ //
+ 
+ import SwiftUI
++import Firebase
+ 
+ struct DeleteAccountButton: View {
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        Button("Delete Account") {
++            signOut()
++        }
++        .foregroundColor(.red)
+     }
++    func signOut() {
++        do {
++            try Auth.auth().signOut()
++            
++            // Successful sign-out
++        } catch let signOutError as NSError {
++            print("Error signing out: \(signOutError)")
++            
++        }
++    }
++
+ }
+ 
+-#Preview {
+-    DeleteAccountButton()
++struct DeleteAccountButton_Previews: PreviewProvider {
++    static var previews: some View {
++        DeleteAccountButton()
++    }
+ }
+diff --git a/OnCampApp/Components/Events.swift b/OnCampApp/Components/Events.swift
+index cd07431..1b7bc98 100644
+--- a/OnCampApp/Components/Events.swift
++++ b/OnCampApp/Components/Events.swift
+@@ -8,15 +8,16 @@
+ import SwiftUI
+ 
+ struct Events: View {
++    @ObservedObject var viewmodel = eventViewModel()
+     var body: some View {
+         NavigationStack {
+             ScrollView {
+-                Text("Trending Events")
++                Text("Events")
+                     .font(.largeTitle)
+                     .fontWeight(.bold)
+                     .foregroundColor(Color("LTBL"))
+                 LazyVStack(spacing: 32) {
+-                    ForEach(0 ... 10, id: \.self) { events in
++                    ForEach(viewmodel.events, id: \.id) { events in
+                         NavigationStack{
+                             EventPreview()
+                                 .frame(height: 400)
+diff --git a/OnCampApp/Components/Menu.swift b/OnCampApp/Components/Menu.swift
+index 396aa51..9c4695b 100644
+--- a/OnCampApp/Components/Menu.swift
++++ b/OnCampApp/Components/Menu.swift
+@@ -1,18 +1,53 @@
++
+ //
+ //  Menu.swift
+ //  OnCampApp
+ //
+-//  Created by Michael Washington on 1/17/24.
++//  Created by Michael Washington on 11/15/23.
+ //
+ 
+ import SwiftUI
+ 
+-struct Menu: View {
++struct VendorMenu: View {
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        NavigationStack {
++            VStack {
++                Spacer()
++                
++                NavigationLink("Become a Vendor", destination: EmptyView())
++                
++                Spacer()
++            }
++            VStack{
++                Divider()
++                
++                Spacer()
++                
++                NavigationLink("Go to VendorHub", destination: EmptyView())
++                
++                Spacer()
++            }
++            VStack{
++                Divider()
++                
++                Spacer()
++                
++                NavigationLink("My Orders", destination: EmptyView())
++                
++                Spacer()
++                
++                Divider()
++                
++            }
++            .frame(maxWidth: .infinity, maxHeight: .infinity)
++            .background(Color.white)
++        }
+     }
++    
+ }
+ 
+-#Preview {
+-    Menu()
++struct Menu_Previews: PreviewProvider {
++    static var previews: some View {
++        VendorMenu()
++    }
+ }
+diff --git a/OnCampApp/Components/PostCell.swift b/OnCampApp/Components/PostCell.swift
+index 74c7cbc..a2cb206 100644
+--- a/OnCampApp/Components/PostCell.swift
++++ b/OnCampApp/Components/PostCell.swift
+@@ -13,17 +13,14 @@ import Kingfisher
+ 
+ 
+ struct PostCell: View {
+-   
+-
+-    
++    @State private var isLiked: Bool = false
++    var post: Post
++    var user: User?
+     
+-    var post : Post
+-    
+-   
+     var body: some View {
+         let postId = post.id
+         //let postedDate = postData.formatTimestamp(post.postedAt)
+-
++        
+         NavigationLink(destination: DetailedPosts(post: post)) {
+             VStack {
+                 HStack(alignment: .top, spacing: 12) {
+@@ -40,7 +37,7 @@ struct PostCell: View {
+                             Text(PostData.shared.relativeTimeString(from: post.postedAt))
+                                 .font(.caption)
+                                 .foregroundColor(Color("LTBL"))
+-
++                            
+                             Button {
+                                 // Handle button action here
+                             } label: {
+@@ -54,24 +51,27 @@ struct PostCell: View {
+                             .multilineTextAlignment(.leading)
+                         
+                         if let mediaUrl = post.mediaUrl, let url = URL(string: mediaUrl) {
+-                                                  KFImage(url)
+-                                                      .resizable()
+-                                                      .aspectRatio(contentMode: .fill)
+-                                                      .frame(width: 300, height: 200)
+-                                                      .clipped()
+-                                                      .cornerRadius(8)
+-                                                      .padding(.top, 5)
+-                                              }
++                            KFImage(url)
++                                .resizable()
++                                .aspectRatio(contentMode: .fill)
++                                .frame(width: 300, height: 200)
++                                .clipped()
++                                .cornerRadius(8)
++                                .padding(.top, 5)
++                        }
+                         
+                         
+                         HStack(spacing: 16) {
+                             Button {
+-                                // Handle button action here
+-                                
+-                                PostData.shared.likePost(postID: postId!)
+-                                
++                                isLiked.toggle() // Toggle the liked status
++                                if isLiked {
++                                    PostData.shared.likePost(postID: post.id!)
++                                } else {
++                                    // Implement unlike post logic
++                                }
+                             } label: {
+-                                Image(systemName: "heart")
++                                Image(systemName: isLiked ? "heart.fill" : "heart")
++                                    .foregroundColor(isLiked ? .red : Color("LTBL"))
+                             }
+                             Button {
+                                 // Handle button action here
+diff --git a/OnCampApp/Components/ProfileHeaderCell.swift b/OnCampApp/Components/ProfileHeaderCell.swift
+index 9b37fb0..a62c470 100644
+--- a/OnCampApp/Components/ProfileHeaderCell.swift
++++ b/OnCampApp/Components/ProfileHeaderCell.swift
+@@ -14,121 +14,103 @@ struct ProfileHeaderCell: View {
+     @StateObject var viewModel = ProfileViewModel()
+     @StateObject var followFunc = UserData()
+     @State private var followingStatus: String = "NotFollowing"
+-
++    
+     var body: some View {
+         
+         VStack(spacing: 20) {
+-       
+-                HStack {
+-                    VStack(alignment: .leading, spacing: 12) {
+-                        VStack(alignment: .leading, spacing: 4) {
+-                            Text(user!.username)
+-                                .font(.title2)
+-                                .fontWeight(.semibold)
+-                            
+-                            Text(user!.school)
+-                                .font(.subheadline)
+-                            
+-
+-                            Text(user!.status)
+-                                .font(.subheadline)
+-                            
+-                        }
++            
++            HStack {
++                VStack(alignment: .leading, spacing: 12) {
++                    VStack(alignment: .leading, spacing: 4) {
++                        Text(user!.username)
++                            .font(.title2)
++                            .fontWeight(.semibold)
+                         
+-                        Text(user!.bio)
+-                            .font(.footnote)
+-                        HStack{
+-                            Text("\(viewModel.followerCount) followers")
+-                                .font(.caption)
+-                                .foregroundColor(Color("LTBL"))
+-                            
+-                            Text("\(viewModel.followingCount) following")
+-                                .font(.caption)
+-                                .foregroundColor(Color("LTBL"))
+-                        }
+-                    }
+-                    
+-                    Spacer()
+-                    
+-                    CircularProfilePictureView(profilePictureURL: user?.pfpUrl)
+-                        .frame(width: 64, height: 64)
+-                }
+-                
+-                // Conditional button rendering
+-                if followingStatus == "Following" {
+-                    HStack {
+-                        Button("Unfollow") {
+-                            Task {
+-                                try await followFunc.followOrUnfollowUser(selectedUid: user?.id ?? "")
+-                                followingStatus = "NotFollowing"
+-                            }
+-                        }
+-                        .buttonStyle(CustomButtonStyle())
++                        Text(user!.school)
++                            .font(.subheadline)
++                        
++                        
++                        Text(user!.status)
++                            .font(.subheadline)
+                         
+-                        Button("Favorite") {
+-                            // Implement favorite logic here
+-                            Task {
+-                                try await followFunc.favoriteOrUnfavoriteUser(selectedUid: user?.id ?? "")
+-                                followingStatus = "FollowingAndFavorite"
+-                            }
+-                        }
+-                        .buttonStyle(CustomButtonStyle())
+                     }
+-                } else if followingStatus == "FollowingAndFavorite" {
+-                    HStack {
+-                        Button("Unfollow") {
+-                            Task {
+-                                try await followFunc.followOrUnfollowUser(selectedUid: user?.id ?? "")
+-                                followingStatus = "NotFollowing"
+-                            }
+-                        }
+-                        .buttonStyle(CustomButtonStyle())
++                    
++                    Text(user!.bio)
++                        .font(.footnote)
++                    HStack{
++                        Text("\(viewModel.followerCount) followers")
++                            .font(.caption)
++                            .foregroundColor(Color("LTBL"))
+                         
+-                        Button("Unfavorite") {
+-                            
+-                            Task {
+-                                try await followFunc.favoriteOrUnfavoriteUser(selectedUid: user?.id ?? "")
+-                                followingStatus = "Following"
+-                            }
+-                        }
+-                        .buttonStyle(CustomButtonStyle())
++                        Text("\(viewModel.followingCount) following")
++                            .font(.caption)
++                            .foregroundColor(Color("LTBL"))
+                     }
+-                } else if followingStatus == "NotFollowing" {
+-                    Button("Follow") {
++                }
++                
++                Spacer()
++                
++                CircularProfilePictureView(profilePictureURL: user?.pfpUrl)
++                    .frame(width: 80, height: 80)
++            }
++            
++            // Conditional button rendering
++            if followingStatus == "Following" {
++                HStack {
++                    Button("Unfollow") {
+                         Task {
+                             try await followFunc.followOrUnfollowUser(selectedUid: user?.id ?? "")
+-                            followingStatus = "Following"
++                            followingStatus = "NotFollowing"
+                         }
+                     }
+                     .buttonStyle(CustomButtonStyle())
+-                } else if followingStatus == "OwnSelf" {
+-                    
+                     
+-                        HStack {
+-                            NavigationLink(destination: editProfileView()) {
+-                                Text("Edit Profile")
+-                                    .padding()
+-                                    .background(Color.blue)
+-                                    .foregroundColor(.white)
+-                                    .cornerRadius(8)
+-                            }
+-                        
++                    Button("Favorite") {
++                        // Implement favorite logic here
++                        Task {
++                            try await followFunc.favoriteOrUnfavoriteUser(selectedUid: user?.id ?? "")
++                            followingStatus = "FollowingAndFavorite"
++                        }
+                     }
++                    .buttonStyle(CustomButtonStyle())
+                 }
+-                
+-            }.onAppear {
+-                Task {
+-                    followingStatus = try await followFunc.checkFollowingAndFavoriteStatus(selectedUid: user?.id ?? "")
++            } else if followingStatus == "OwnSelf" {
++                HStack {
++                    Spacer()
++                    
++                    NavigationLink(destination: editProfileView()) {
++                        Text("Edit Profile")
++                            .frame(maxWidth: .infinity, alignment: .center)
++                            .padding()
++                            .background(Color.blue)
++                            .foregroundColor(.white)
++                            .cornerRadius(8)
++                    }
++
++                    NavigationLink(destination: Settings()) {
++                        Image(systemName: "gear")
++                            .imageScale(.large)
++                            .padding(.trailing, 12)
++                    }
++
++                    Spacer()
+                 }
+-                viewModel.setupListeners(forUserID: user?.id ?? "")
+             }
+-            .onDisappear {
+-                viewModel.tearDownListeners()
++
++
++        }.onAppear {
++            Task {
++                followingStatus = try await followFunc.checkFollowingAndFavoriteStatus(selectedUid: user?.id ?? "")
+             }
+-            
+-            .padding(.horizontal, 12.0)
++            viewModel.setupListeners(forUserID: user?.id ?? "")
++        }
++        .onDisappear {
++            viewModel.tearDownListeners()
+         }
++        
++        .padding(.horizontal, 12.0)
+     }
++}
+ 
+ 
+ struct CustomButtonStyle: ButtonStyle {
+diff --git a/OnCampApp/Components/Settings.swift b/OnCampApp/Components/Settings.swift
+index fee3902..cad8b65 100644
+--- a/OnCampApp/Components/Settings.swift
++++ b/OnCampApp/Components/Settings.swift
+@@ -2,17 +2,51 @@
+ //  Settings.swift
+ //  OnCampApp
+ //
+-//  Created by Michael Washington on 1/19/24.
++//  Created by Michael Washington on 11/14/23.
+ //
+ 
+ import SwiftUI
+ 
+ struct Settings: View {
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        NavigationStack {
++            Form {
++                
++
++                Section(header: Text("Report Issue")) {
++                    NavigationLink(destination: Text("Report Issue")) {
++                        Text("Report Issue")
++                    }
++                }
++
++                Section(header: Text("About")) {
++                    NavigationLink(destination: Text("App Version: 1.0")) {
++                        Text("App Information")
++                    }
++                }
++
++                Section(header: Text("Legal")) {
++                    NavigationLink(destination: Text("Terms and Conditions")) {
++                        Text("Terms and Conditions")
++                    }
++                    NavigationLink(destination: Text("Privacy Policy")) {
++                        Text("Privacy Policy")
++                    }
++                }
++                
++                Section(header: Text("Account")) {
++                    Signoutbutton()
++                    DeleteAccountButton()
++                }
++                
++            }
++            .navigationTitle("Settings")
++        }
+     }
+ }
+ 
+-#Preview {
+-    Settings()
++struct SettingsView_Previews: PreviewProvider {
++    static var previews: some View {
++        Settings()
++    }
+ }
+diff --git a/OnCampApp/Components/SideMenu.swift b/OnCampApp/Components/SideMenu.swift
+index b3ccc43..2389a20 100644
+--- a/OnCampApp/Components/SideMenu.swift
++++ b/OnCampApp/Components/SideMenu.swift
+@@ -2,17 +2,35 @@
+ //  SideMenu.swift
+ //  OnCampApp
+ //
+-//  Created by Michael Washington on 1/17/24.
++//  Created by Michael Washington on 11/16/23.
+ //
+ 
+ import SwiftUI
+ 
+ struct SideMenu: View {
++    let user: User?
++
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        ZStack {
++            LinearGradient(gradient: Gradient(colors: [Color.blue, Color.mint]), startPoint: .top, endPoint: .bottom)
++                .ignoresSafeArea()
++            
++            VStack {
++                SideMenuHeader(user: user) // Updated to remove the binding
++                    .frame(height: 240)
++                
++                SideMenuOptions()
++                
++                Spacer()
++            }
++            .foregroundColor(Color("LTBLALT")) // Make sure you have this color defined in your assets
++        }
+     }
+ }
+ 
+-#Preview {
+-    SideMenu()
+-}
++// Uncomment this for previewing the SideMenu
++// struct SideMenu_Previews: PreviewProvider {
++//     static var previews: some View {
++//         SideMenu()
++//     }
++// }
+diff --git a/OnCampApp/Components/SideMenuHeader.swift b/OnCampApp/Components/SideMenuHeader.swift
+index 756f3fd..57ee96a 100644
+--- a/OnCampApp/Components/SideMenuHeader.swift
++++ b/OnCampApp/Components/SideMenuHeader.swift
+@@ -2,17 +2,66 @@
+ //  SideMenuHeader.swift
+ //  OnCampApp
+ //
+-//  Created by Michael Washington on 1/17/24.
++//  Created by Michael Washington on 11/16/23.
+ //
+ 
+ import SwiftUI
+ 
+ struct SideMenuHeader: View {
++    @Environment(\.dismiss) var dismiss
++    let user: User?
++    @StateObject var viewModel = ProfileViewModel()
++
++
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        VStack(alignment: .leading) {
++            HStack {
++                Button(action: {
++                    dismiss()
++                }) {
++                    Image(systemName: "xmark")
++                        .font(.title)
++                        .foregroundColor(.primary)
++                }
++                Spacer()
++                
++                Spacer()
++                
++                CircularProfilePictureView(profilePictureURL: user?.pfpUrl)
++                    .frame(width: 80, height: 80)
++            }
++            
++            HStack {
++                Spacer()
++                
++                Text(user!.username)
++                    .font(.system(size: 24, weight: .semibold))
++                
++                Image(systemName: "v.circle.fill")
++                    .foregroundColor(Color("OnCampSky"))
++            }
++            
++            HStack(spacing: 12) {
++                Spacer()
++                
++                HStack(spacing: 4) {
++                    Text("\(viewModel.followerCount)").bold()
++                    Text("Followers")
++                }
++                HStack(spacing: 4) {
++                    Text("\(viewModel.followingCount)").bold()
++                    Text("Following")
++                }
++            }
++            Spacer()
++        }
++        .padding()
+     }
+ }
+ 
+-#Preview {
+-    SideMenuHeader()
+-}
++// Uncomment for preview
++// struct SideMenuHeader_Previews: PreviewProvider {
++//     static var previews: some View {
++//         SideMenuHeader()
++//     }
++// }
+diff --git a/OnCampApp/Components/SideMenuOptions.swift b/OnCampApp/Components/SideMenuOptions.swift
+index f2cb1e3..739ecd3 100644
+--- a/OnCampApp/Components/SideMenuOptions.swift
++++ b/OnCampApp/Components/SideMenuOptions.swift
+@@ -2,17 +2,65 @@
+ //  SideMenuOptions.swift
+ //  OnCampApp
+ //
+-//  Created by Michael Washington on 1/17/24.
++//  Created by Michael Washington on 11/16/23.
+ //
+ 
+ import SwiftUI
+ 
+ struct SideMenuOptions: View {
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        NavigationStack{
++            VStack{
++                HStack(spacing: 16) {
++                    Spacer()
++                    
++                    Image(systemName: "v.circle.fill")
++                        .frame(width: 24, height: 24)
++                    
++                    NavigationLink(destination: EmptyView(), label: {
++                        Text ("Become a Vendor!")
++                    })
++                }
++                .foregroundColor(Color(.white))
++                
++                Spacer()
++                
++                HStack(spacing: 16) {
++                    Spacer()
++                    
++                    Image(systemName: "bag.fill")
++                        .frame(width: 24, height: 24)
++                    
++                    NavigationLink(destination: EmptyView(), label: {
++                        Text ("My Orders")
++                    })
++                }
++                .foregroundColor(Color(.white))
++                
++                Spacer()
++                
++                HStack(spacing: 16) {
++                    Spacer()
++                    
++                    Image(systemName: "storefront.fill")
++                        .frame(width: 24, height: 24)
++                    
++                    NavigationLink(destination: EmptyView(), label: {
++                        Text ("Go To VendorHub")
++                    })
++                }
++                .foregroundColor(Color(.white))
++                
++                Spacer()
++                
++                Spacer()
++            }
++        }
+     }
+ }
+ 
+-#Preview {
+-    SideMenuOptions()
++struct SideMenuOptions_Previews: PreviewProvider {
++    static var previews: some View {
++        SideMenuOptions()
++    }
+ }
+diff --git a/OnCampApp/Components/Spotlight.swift b/OnCampApp/Components/Spotlight.swift
+index 43fddb2..2aeb618 100644
+--- a/OnCampApp/Components/Spotlight.swift
++++ b/OnCampApp/Components/Spotlight.swift
+@@ -9,7 +9,27 @@ import SwiftUI
+ 
+ struct Spotlight: View {
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        NavigationStack {
++            ScrollView {
++                Text("Spotlight")
++                    .font(.largeTitle)
++                    .fontWeight(.bold)
++                    .foregroundColor(Color("LTBL"))
++                LazyVStack(spacing: 32) {
++                    ForEach(0 ... 10, id: \.self) { events in
++                        NavigationStack{
++                            EventPreview()
++                                .frame(height: 400)
++                                .clipShape(RoundedRectangle(cornerRadius: 10))
++                            Divider()
++                        }
++                    }
++                }
++            }
++            .navigationDestination(for: Int.self) { events in
++                Text("events")
++            }
++        }
+     }
+ }
+ 
+diff --git a/OnCampApp/Components/StarRating.swift b/OnCampApp/Components/StarRating.swift
+index fd22c92..f551378 100644
+--- a/OnCampApp/Components/StarRating.swift
++++ b/OnCampApp/Components/StarRating.swift
+@@ -1,18 +1,34 @@
+-//
+-//  StarRating.swift
+-//  OnCampApp
+-//
+-//  Created by Michael Washington on 1/17/24.
+-//
+-
+ import SwiftUI
+ 
+ struct StarRating: View {
++    var vendor: Vendor
++    var maximumRating: Int = 5
++    let onImage = Image(systemName: "star.fill")
++    let offImage = Image(systemName: "star")
++    let halfImage = Image(systemName: "star.leadinghalf.filled")
++    
++    func image(for number: Int) -> Image {
++        if Double(number) > vendor.rating {
++            return offImage
++        } else if Double(number) > vendor.rating - 0.5 {
++            return halfImage
++        } else {
++            return onImage
++        }
++    }
++
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        HStack {
++            ForEach(1...maximumRating, id: \.self) { number in
++                self.image(for: number)
++                    .foregroundColor(.yellow)
++            }
++        }
+     }
+ }
+ 
+-#Preview {
+-    StarRating()
+-}
++//struct StarRating_Previews: PreviewProvider {
++//    static var previews: some View {
++//        StarRating(vendor: Vendor(id: nil, description: "Test Description", schools: ["Test School"], name: "Test Vendor", image: "test_image", category: "Test Category", rating: 3.5, featured: false))
++//    }
++//}
+diff --git a/OnCampApp/Components/Trending.swift b/OnCampApp/Components/Trending.swift
+index 0158f2d..4ea4f98 100644
+--- a/OnCampApp/Components/Trending.swift
++++ b/OnCampApp/Components/Trending.swift
+@@ -9,7 +9,27 @@ import SwiftUI
+ 
+ struct Trending: View {
+     var body: some View {
+-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
++        NavigationStack {
++            ScrollView {
++                Text("Trending Events")
++                    .font(.largeTitle)
++                    .fontWeight(.bold)
++                    .foregroundColor(Color("LTBL"))
++                LazyVStack(spacing: 32) {
++                    ForEach(0 ... 10, id: \.self) { events in
++                        NavigationStack{
++                            EventPreview()
++                                .frame(height: 400)
++                                .clipShape(RoundedRectangle(cornerRadius: 10))
++                            Divider()
++                        }
++                    }
++                }
++            }
++            .navigationDestination(for: Int.self) { events in
++                Text("events")
++            }
++        }
+     }
+ }
+ 
+diff --git a/OnCampApp/Components/VendorDetail.swift b/OnCampApp/Components/VendorDetail.swift
+index 9cb9b88..1316d36 100644
+--- a/OnCampApp/Components/VendorDetail.swift
++++ b/OnCampApp/Components/VendorDetail.swift
+@@ -1,80 +1,100 @@
+ import SwiftUI
++import Kingfisher
+ 
+ struct VendorDetail: View {
+     let vendor: Vendor
++    @State private var showAlert = false
+     
+     var body: some View {
+         NavigationView {
+-            ScrollView {
+-                VStack(alignment: .leading, spacing: 10) {
+-                    // Header with title and back button
+-                    
+-                        Spacer()
+-                    Text(vendor.name)
+-                            .font(.title)
+-                            .bold()
+-                   
++            ZStack(alignment: .top) {
++                ScrollView {
++                    VStack(spacing: 0) {
++                        Rectangle()
++                            .foregroundColor(.clear)
++                            .frame(height: 210) // Placeholder for the overlaid content
+                         
+-                    
+-                    .padding(.horizontal)
+-                    .padding(.top, 20)
+-                    
+-                    
+-                    
+-                    // Vendor Description
+-                    Text(vendor.description)
+-                        .font(.body)
+-                        .padding([.horizontal, .bottom])
+-
+-                    // Vendor Location
+-                    Text("Rating: \(vendor.rating)")
+-                        .font(.subheadline)
+-                        .padding(.horizontal)
+-                    
+-                    // Schools Serviced
+-                    Text("Schools Serviced:")
+-                        .font(.subheadline)
+-                        .bold()
+-                        .padding(.horizontal)
+-                    
+-                    ForEach(vendor.schools, id: \.self) { school in
+-                        Text(school)
+-                            .font(.caption)
++                        Divider()
++                        
++                        // Your items grid and any other content goes here
++                        Text("PRODUCTS")
++                            .font(.largeTitle)
+                             .padding(.horizontal)
+-                    }
+-                    Button(action: {
+-                        // Messaging logic here
+-                    }) {
+-                        Text("Message Vendor")
+-                            .font(.headline)
+-                            .foregroundColor(.white)
+-                            .frame(maxWidth: .infinity)
+-                            .padding()
+-                            .background(Color.blue)
+-                            .cornerRadius(10)
+-                    }
+-                    .padding(.horizontal)
+-                    .padding(.top, 10)
+-                    
+-                    Divider()
+-                        .padding(.vertical)
+-                    
+-                    // Items Section Title
+-                    Text("Items")
+-                        .font(.headline)
++                        
++                        
++                        LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15) {
++                            ForEach(productList, id: \.id) { item in
++                                SmallProductCard(product: item)
++                            }
++                        }
+                         .padding(.horizontal)
+-                        .padding(.bottom, 5)
++                    }
++                }
++                
++                VStack {
++                    KFImage(URL(string: vendor.headerImage))
++                        .resizable()
++                        .aspectRatio(contentMode: .fill)
++                        .frame(height: 300)
++                        .clipped()
++                        .edgesIgnoringSafeArea(.top)
++                        .opacity(0.8)
+                     
+-                    // Items Grid
+-                    LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 15) {
+-                        ForEach(productList, id: \.id) { item in
+-                            SmallProductCard(product: item)
++                    Spacer() // Ensures the header occupies the correct amount of space
++                }
++                
++                VStack {
++                    HStack{
++                        VStack(alignment: .leading, spacing: 2) {
++                            Text(vendor.name)
++                                .font(.title)
++                                .bold()
++                                .foregroundColor(.black)
++                            HStack{
++                                StarRating(vendor: vendor)
++                                
++                                Button(action: {
++                                    showAlert = true
++                                }) {
++                                    Image(systemName: "info.circle")
++                                        .foregroundColor(.blue)
++                                }
++                                .alert(isPresented: $showAlert) {
++                                    Alert(
++                                        title: Text("Vendor Info"),
++                                        message: Text("\(vendor.description)\nSchools Serviced: \(vendor.schools.joined(separator: ", "))"),
++                                        dismissButton: .default(Text("OK"))
++                                    )
++                                }
++                            }
++                            Spacer()
++                            
++                            Button(action: {
++                                // Messaging logic here
++                            }) {
++                                Text("Message Vendor")
++                                    .font(.headline)
++                                    .foregroundColor(.white)
++                                    .frame(maxWidth: .infinity)
++                                    .padding()
++                                    .background(Color.blue)
++                                    .cornerRadius(10)
++                            }
+                         }
++                        .padding([.leading, .bottom, .trailing])
++                        .cornerRadius(15)
++                        .padding(.horizontal)
++                        
++                        Spacer()
++                        
++                        KFImage(URL(string: vendor.pfpUrl))
++                            .resizable()
++                            .scaledToFill()
++                            .frame(width: 90, height: 90)
++                            .clipShape(Circle())
++                            .shadow(radius: 10)
+                     }
+-                    .padding(.horizontal)
+-
+-                    // Message Button
+-                  
++                    .frame(height: 180) // Fixed height to match the header image
+                 }
+             }
+             .navigationBarHidden(true)
+@@ -82,6 +102,7 @@ struct VendorDetail: View {
+     }
+ }
+ 
++
+ //struct VendorDetail_Previews: PreviewProvider {
+ //    static var previews: some View {
+ //        VendorDetail(
+@@ -89,3 +110,4 @@ struct VendorDetail: View {
+ //        )
+ //    }
+ //}
++
+diff --git a/OnCampApp/Data/MessageData.swift b/OnCampApp/Data/MessageData.swift
+index 91b2d1d..1c69c4c 100644
+--- a/OnCampApp/Data/MessageData.swift
++++ b/OnCampApp/Data/MessageData.swift
+@@ -17,7 +17,7 @@ struct Chats: Identifiable, Codable {
+ 
+ struct Message: Identifiable, Codable {
+     @DocumentID var id: String?
+-    var senderId: String
++    var senderId: Sring
+     var content: String
+     var timestamp: Date
+     var read: Bool
+diff --git a/OnCampApp/Data/PostData.swift b/OnCampApp/Data/PostData.swift
+index 34a8dd3..cfb52c7 100644
+--- a/OnCampApp/Data/PostData.swift
++++ b/OnCampApp/Data/PostData.swift
+@@ -41,6 +41,7 @@ struct Post: Codable, Hashable, Identifiable {  // Conform to Codable and Identi
+ }
+ @MainActor
+ class PostData: ObservableObject {
++    @Published var isLiked: Bool = false
+     static let shared = PostData()
+     @Published var posts: [Post] = []  // This will hold your posts and notify observers of any changes
+ 
+@@ -197,48 +198,56 @@ class PostData: ObservableObject {
+ 
+ 
+     func likePost(postID: String ) {
+-        let userID = Auth.auth().currentUser!.uid
++        guard let userID = Auth.auth().currentUser?.uid else {
++            print("User not logged in")
++            return
++        }
++
+         let db = Firestore.firestore()
+         let postRef = db.collection("Posts").document(postID)
+         let userRef = db.collection("Users").document(userID)
+-     
+-        
+-        
+-        // Fetch the post document
+-        postRef.getDocument { (document, error) in
++
++        // Check if the post is already liked by the user
++        postRef.collection("likes").document(userID).getDocument { (document, error) in
++            if let error = error {
++                print("Error checking like status: \(error.localizedDescription)")
++                return
++            }
++
+             if let document = document, document.exists {
+-                // Get the current likeCount
+-                let currentLikeCount = document.data()?["likeCount"] as? Int ?? 0
+-                
+-                // Update the likeCount
+-                let newLikeCount = currentLikeCount + 1
+-                postRef.updateData(["likeCount": newLikeCount]) { error in
++                // Post is already liked by the user, so unlike it
++                postRef.collection("likes").document(userID).delete() { error in
+                     if let error = error {
+-                        print("Error updating likeCount: \(error.localizedDescription)")
++                        print("Error unliking post: \(error.localizedDescription)")
+                     } else {
+-                        // Add the user's ID to the post's likes subcollection
+-                        postRef.collection("likes").document(userID).setData([:]) { error in
++                        userRef.collection("likes").document(postID).delete() { error in
+                             if let error = error {
+-                                print("Error adding user to likes subcollection: \(error.localizedDescription)")
++                                print("Error removing liked post from user's collection: \(error.localizedDescription)")
+                             } else {
+-                                // Add the liked post's ID to the user's likes collection
+-                                userRef.collection("likes").document(postID).setData([:]) { error in
+-                                    if let error = error {
+-                                        print("Error adding liked post to user's likes collection: \(error.localizedDescription)")
+-                                    } else {
+-                                        print("Post liked successfully!")
+-                                    }
+-                                }
++                                print("Post unliked successfully!")
+                             }
+                         }
+                     }
+                 }
+             } else {
+-                print("Post not found")
++
++                postRef.collection("likes").document(userID).setData([:]) { error in
++                    if let error = error {
++                        print("Error liking post: \(error.localizedDescription)")
++                    } else {
++                        userRef.collection("likes").document(postID).setData([:]) { error in
++                            if let error = error {
++                                print("Error adding liked post to user's collection: \(error.localizedDescription)")
++                            } else {
++                                print("Post liked successfully!")
++                            }
++                        }
++                    }
++                }
+             }
+         }
+     }
+-
++    
+     func repostPost(postID: String) {
+         let userID = Auth.auth().currentUser!.uid
+         let db = Firestore.firestore()
+diff --git a/OnCampApp/Data/UserData.swift b/OnCampApp/Data/UserData.swift
+index c956971..fc90ec5 100644
+--- a/OnCampApp/Data/UserData.swift
++++ b/OnCampApp/Data/UserData.swift
+@@ -45,36 +45,12 @@ class UserData : ObservableObject {
+        
+         
+         self.colleges = [
++            "Select a College",
+             "Morehouse College",
+             "Spelman College",
+             "Clark Atlanta University",
+-            "University of Georgia (UGA)",
+-            "Georgia State University",
+-            "Georgia Institute of Technology (Georgia Tech)",
+-            "Emory University",
+-            "Georgia Southern University",
+-            "Kennesaw State University",
+-            "Mercer University",
+-            "Agnes Scott College",
+-            "Savannah State University",
+-            "Georgia College & State University",
+-            "Columbus State University",
+-            "Georgia Southern University",
+-            "Valdosta State University",
+-            "Augusta University",
+-            "University of West Georgia",
+-            "Georgia Southwestern State University",
+-            "Georgia Gwinnett College",
+-            "Oglethorpe University",
+-            "Berry College",
+-            "Piedmont College",
+-            "Reinhardt University",
+-            "Wesleyan College",
+-            "University of North Georgia",
+-            "Albany State University",
+-            "Fort Valley State University",
+-            "Middle Georgia State University",
+-            "Clayton State University"
++            "Georgia State",
++            "Georgia Tech"
+         ] // List of colleges in Georgia
+ 
+         self.statuses = [
+@@ -117,8 +93,7 @@ class UserData : ObservableObject {
+          "Staying in","Going out", "Eating out","Drinking",
+         "Smoking", "Sports", "Reading", "Movies",
+         "Music", "Gaming", "Writing", "Food",
+-        "Fashion", "Cars", "Parties",
+-        "Staying home", "Traveling", "Cooking", "Socializing",
++        "Fashion", "Cars", "Parties", "Traveling", "Cooking", "Socializing",
+         "Hiking", "Exercise", "Learning", "Concerts",
+         "Art", "Tech", "Nature", "Dancing",
+         "Photography", "Pets", "Adventure", "Beach",
+@@ -303,8 +278,36 @@ class UserData : ObservableObject {
+         }
+     }
+ 
+-        
+ 
++    // Async function to fetch a user by userId
++    static func fetchUser(by userId: String) async throws -> User? {
++        let db = Firestore.firestore()
++        let usersCollection = db.collection("users")
++
++        // Attempt to retrieve the document
++        let documentSnapshot = try await usersCollection.document(userId).getDocument()
++
++        // Check if the document exists
++        guard documentSnapshot.exists, let user = try? documentSnapshot.data(as: User.self) else {
++            // Handle the case where the document does not exist or data can't be decoded
++            return nil
++        }
++
++        // Return the User object
++        return user
++    }
++    
++    func fetchUser(for userId: String) async throws -> User {
++        let userDocument = Userdb.document(userId)
++        
++        let documentSnapshot = try await userDocument.getDocument()
++        
++        guard let user = try documentSnapshot.data(as: User.self) else {
++            throw NSError(domain: "UserDataService", code: 0, userInfo: [NSLocalizedDescriptionKey: "User not found"])
++        }
++        
++        return user
++    }
+ }
+ 
+ 
+diff --git a/OnCampApp/Data/VendorData.swift b/OnCampApp/Data/VendorData.swift
+index 77c0543..8ce299e 100644
+--- a/OnCampApp/Data/VendorData.swift
++++ b/OnCampApp/Data/VendorData.swift
+@@ -16,10 +16,11 @@ struct Vendor: Identifiable {
+     var description: String
+     var schools: [String]
+     var name: String
+-    var image: String
++    var headerImage: String
+     var category: String
+     var rating: Double
+-    var featured: Bool  // New field
++    var featured: Bool 
++    var pfpUrl: String// New field
+ }
+ @MainActor
+ class VendorData: ObservableObject{
+@@ -50,10 +51,11 @@ class VendorData: ObservableObject{
+             description: data["description"] as? String ?? "",
+             schools: data["schools"] as? [String] ?? [],
+             name: data["name"] as? String ?? "",
+-            image: data["image"] as? String ?? "",
++            headerImage: data["headerImage"] as? String ?? "",
+             category: data["category"] as? String ?? "",
+-            rating: data["rating"] as? Double ?? 0.0, 
+-            featured: data["featured"] as? Bool ?? false
++            rating: data["rating"] as? Double ?? 0.0,
++            featured: data["featured"] as? Bool ?? false,
++            pfpUrl: data["pfpUrl"] as? String ?? ""
+         
+         )
+         
+@@ -134,9 +136,10 @@ class VendorData: ObservableObject{
+                     "description": vendor.description,
+                     "schools": vendor.schools,
+                     "name": vendor.name,
+-                    "image": vendor.image,
++                    "headerImage": vendor.headerImage,
+                     "category": vendor.category,
+-                    "rating": vendor.rating
++                    "rating": vendor.rating,
++                    "pfpUrl": vendor.pfpUrl
+ 
+                 ]) { err in
+                     if let err = err {
+@@ -151,9 +154,10 @@ class VendorData: ObservableObject{
+                     "description": vendor.description,
+                     "schools": vendor.schools,
+                     "name": vendor.name,
+-                    "image": vendor.image,
++                    "image": vendor.headerImage,
+                     "category": vendor.category,
+-                    "rating": vendor.rating
++                    "rating": vendor.rating,
++                    "pfpUrl": vendor.pfpUrl
+                 ]) { err in
+                     if let err = err {
+                         print("Error creating new vendor: \(err)")
+@@ -167,50 +171,9 @@ class VendorData: ObservableObject{
+ 
+    
+ 
+-    var sampleVendors: [Vendor] = [
+-        // Hair Vendors
+-        Vendor(id: nil, description: "Trendy hair styles and products", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Hair Glamour", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.2, featured: true),
+-        Vendor(id: nil, description: "Luxury hair salon services", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Elegant Strands", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.8, featured: false),
+-        Vendor(id: nil, description: "Affordable and stylish haircuts", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Barber's Edge", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.1, featured: true),
+-        Vendor(id: nil, description: "Professional hair care products", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Hair Care Central", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.5, featured: false),
+-
+-        // Food Vendors
+-        Vendor(id: nil, description: "Gourmet sandwiches and salads", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Green Bites Cafe", image: "https://source.unsplash.com/random/300x300", category: "Food", rating: 4.3, featured: false),
+-        Vendor(id: nil, description: "Authentic Italian pizza", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Pizza Passion", image: "https://source.unsplash.com/random/300x300", category: "Food", rating: 4.7, featured: false),
+-        Vendor(id: nil, description: "Delicious vegan options", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Veggie Delight", image: "https://source.unsplash.com/random/300x300", category: "Food", rating: 4.6, featured: false),
+-        Vendor(id: nil, description: "Fresh and tasty sushi", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Sushi World", image: "https://source.unsplash.com/random/300x300", category: "Food", rating: 4.2, featured: true),
+-
+-        // Fashion Vendors
+-        Vendor(id: nil, description: "Latest in trendy fashion", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Fashion Forward", image: "https://source.unsplash.com/random/300x300", category: "Fashion", rating: 4.4, featured: false),
+-        Vendor(id: nil, description: "Exclusive designer apparel", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Designer Hub", image: "https://source.unsplash.com/random/300x300", category: "Fashion", rating: 4.9, featured: false),
+-        Vendor(id: nil, description: "Affordable stylish clothing", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Budget Fashionista", image: "https://source.unsplash.com/random/300x300", category: "Fashion", rating: 4.0, featured: false),
+-        Vendor(id: nil, description: "Urban and streetwear styles", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Urban Trends", image: "https://source.unsplash.com/random/300x300", category: "Fashion", rating: 4.3, featured: true),
+-
+-        // Other Vendors
+-        Vendor(id: nil, description: "Custom artwork and prints", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Artistic Expressions", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.5, featured: false),
+-        Vendor(id: nil, description: "Professional photography services", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Capture the Moment", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.7, featured: false),
+-        Vendor(id: nil, description: "Expert fitness training", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Fit and Fab", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.6, featured: false),
+-        Vendor(id: nil, description: "Reliable tech repair services", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Tech Savvy Repairs", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.1, featured: false),
+-        Vendor(id: nil, description: "Handmade jewelry and accessories", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Jewel Creations", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.8, featured: false),
+-        Vendor(id: nil, description: "Quality second-hand books", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Book Haven", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.3, featured: false),
+-        Vendor(id: nil, description: "Eco-friendly cleaning services", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Green Cleaners", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.2, featured: false),
+-        Vendor(id: nil, description: "Professional event planning", schools: ["Spelman", "Morehouse", "Clark Atlanta"], name: "Event Masters", image: "https://source.unsplash.com/random/300x300", category: "Other", rating: 4.5, featured: true)
+-    ]
+-    func sortSampleVendorsByCategory() {
+-            for vendor in sampleVendors {
+-                vendorsByCategory[vendor.category, default: []].append(vendor)
+-            }
+-        }
++    
++    
+    
+     
+ }
+-let mockVendor = Vendor(
+-    id: "BLOOBLOo", // This should be a unique ID
+-    description: "A test vendor",
+-    schools: ["School1", "School2"],
+-    name: "Test Vendor",
+-    image: "image_url",
+-    category: "TestCategory",
+-    rating: 4.5,
+-    featured: false
+-)
++
+diff --git a/OnCampApp/MainViews/Messages/Chat.swift b/OnCampApp/MainViews/Messages/Chat.swift
+index aa534d2..ec211e3 100644
+--- a/OnCampApp/MainViews/Messages/Chat.swift
++++ b/OnCampApp/MainViews/Messages/Chat.swift
+@@ -14,6 +14,10 @@ struct Chat: View {
+             ScrollView {
+                 VStack(alignment: .leading, spacing: 12) {
+                     ForEach(messages, id: \.id) { message in
++                        if index == messages.count - 1 {
++                                                    // Display timestamp for the most recent message
++                                                    Timestamp(date: message.date)
++                                                }
+                         DetailedChatBubbles(isFromCurrentUser: message.senderId == loggedInUid, message: message)
+                     }
+                 }
+diff --git a/OnCampApp/MainViews/Profile/View/EditProfile.swift b/OnCampApp/MainViews/Profile/View/EditProfile.swift
+index fb2c5b9..3810c13 100644
+--- a/OnCampApp/MainViews/Profile/View/EditProfile.swift
++++ b/OnCampApp/MainViews/Profile/View/EditProfile.swift
+@@ -19,7 +19,6 @@ struct editProfileView: View {
+                     .edgesIgnoringSafeArea([.bottom, .horizontal])
+                 
+                 VStack {
+-                    Signoutbutton()
+                     HStack {
+                         VStack(alignment: .leading) {
+                             Text("Name")
+@@ -57,24 +56,7 @@ struct editProfileView: View {
+             }
+             .navigationTitle("Edit Profile")
+             .navigationBarTitleDisplayMode(.inline)
+-            .toolbar {
+-                ToolbarItem(placement: .navigationBarLeading) {
+-                    Button("Cancel") {
+-                        
+-                    }
+-                    .font(.subheadline)
+-                    .foregroundColor(Color("LTBL"))
+-                }
+-                
+-                ToolbarItem(placement: .navigationBarTrailing) {
+-                    Button("Done") {
+-                        
+-                    }
+-                    .font(.subheadline)
+-                    .fontWeight(.semibold)
+-                    .foregroundColor(Color("LTBL"))
+-                }
+-            }
++
+         }
+     }
+ }
+diff --git a/OnCampApp/MainViews/Profile/View/Profile.swift b/OnCampApp/MainViews/Profile/View/Profile.swift
+index 683ca87..aec15f9 100644
+--- a/OnCampApp/MainViews/Profile/View/Profile.swift
++++ b/OnCampApp/MainViews/Profile/View/Profile.swift
+@@ -37,7 +37,7 @@ struct Profile: View {
+                     case .posts:
+                         UserPostsView(viewModel: viewModel) // Replace with actual view
+                     case .reposts:
+-                        UserRepostsView(viewModel: viewModel) // Replace with actual view
++                         UserRepostsView(viewModel: viewModel) // Replace with actual view
+                     case .likes:
+                         UserLikesView(viewModel: viewModel) // Replace with actual view
+                     }
+diff --git a/OnCampApp/MainViews/Social.swift b/OnCampApp/MainViews/Social.swift
+index e258521..8cad7cf 100644
+--- a/OnCampApp/MainViews/Social.swift
++++ b/OnCampApp/MainViews/Social.swift
+@@ -1,38 +1,47 @@
+ import SwiftUI
+ 
+ struct Social: View {
+-    let tabs = ["Events", "Trending", "Spotlight", "Bulletin Board"]
+-    @State private var selectedTabIndex = 0
+-    @State private var searchText = ""
++    let categories = ["Events", "Trending", "Spotlight", "Bulletin Board"]
++    @State private var selectedCategoryIndex = 0
+     @State private var showingSearchView = false
+ 
+     var body: some View {
+         NavigationStack {
+             ScrollView {
+                 VStack {
+-                    TabsView(tabs: tabs, selectedTabIndex: $selectedTabIndex)
++                    categoryPicker
+                     contentSwitcherView
+                 }
+                 .padding(.bottom, 20)
+             }
++            .navigationTitle(categories[selectedCategoryIndex])
++            .navigationBarTitleDisplayMode(.inline)
+             .toolbar {
+-                ToolbarItem(placement: .navigationBarLeading) {
++                ToolbarItemGroup(placement: .navigationBarLeading) {
+                     NavigationLink(destination: Messages()) {
+                         Image(systemName: "message")
+-                            .font(.system(size: 18))
+                     }
+                 }
++
+                 ToolbarItem(placement: .principal) {
+-                    TextField("Search...", text: $searchText)
+-                        .textFieldStyle(RoundedBorderTextFieldStyle())
+-                        .onTapGesture {
+-                            showingSearchView = true
++                    Button(action: {
++                        showingSearchView = true
++                    }) {
++                        HStack {
++                            Text("Search...")
++                                .foregroundColor(.blue)
+                         }
++                        .padding(7)
++                        .frame(width: 300, height: 30)
++                        .background(RoundedRectangle(cornerRadius: 10)
++                            .stroke(lineWidth: 1)
++                            .foregroundColor(.blue))
++                    }
+                 }
+-                ToolbarItem(placement: .navigationBarTrailing) {
++
++                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                     NavigationLink(destination: NotificationsView()) {
+                         Image(systemName: "bell")
+-                            .font(.system(size: 18))
+                     }
+                 }
+             }
+@@ -42,45 +51,53 @@ struct Social: View {
+         }
+     }
+ 
++    var categoryPicker: some View {
++        Picker("Categories", selection: $selectedCategoryIndex) {
++            ForEach(categories.indices, id: \.self) { index in
++                Text(categories[index]).tag(index)
++            }
++        }
++        .pickerStyle(.segmented)
++        .padding()
++    }
++    
+     var contentSwitcherView: some View {
+         Group {
+-            switch selectedTabIndex {
++            switch selectedCategoryIndex {
+             case 0:
+-                AnyView(Events())
++                Events()
+             case 1:
+-                AnyView(EmptyView())
++                Trending() // Replace with your actual view for Trending
+             case 2:
+-                AnyView(EmptyView())
++                Spotlight() // Replace with your actual view for Spotlight
+             case 3:
+-                AnyView(EmptyView())
++                BulletinBoard() // Replace with your actual view for Bulletin Board
+             default:
+-                AnyView(Events())
++                EmptyView()
+             }
+         }
+     }
+-}
+-
+-struct TabsView: View {
+-    let tabs: [String]
+-    @Binding var selectedTabIndex: Int
+-
+-    var body: some View {
+-        HStack(spacing: 20) {
+-            ForEach(tabs.indices) { index in
+-                Text(tabs[index])
+-                    .foregroundColor(index == selectedTabIndex ? .blue : .black)
+-                    .underline(index == selectedTabIndex ? true : false, color: .blue)
+-                    .padding(.vertical, 10)
+-                    .onTapGesture {
+-                        withAnimation {
+-                            selectedTabIndex = index
++    struct TabsView: View {
++        let tabs: [String]
++        @Binding var selectedTabIndex: Int
++        
++        var body: some View {
++            HStack(spacing: 20) {
++                ForEach(tabs.indices) { index in
++                    Text(tabs[index])
++                        .foregroundColor(index == selectedTabIndex ? .blue : .black)
++                        .underline(index == selectedTabIndex ? true : false, color: .blue)
++                        .padding(.vertical, 10)
++                        .onTapGesture {
++                            withAnimation {
++                                selectedTabIndex = index
++                            }
+                         }
+-                    }
++                }
+             }
+         }
+     }
+ }
+-
+ struct Social_Previews: PreviewProvider {
+     static var previews: some View {
+         Social()
+diff --git a/OnCampApp/MainViews/TabBar/TabBar.swift b/OnCampApp/MainViews/TabBar/TabBar.swift
+index a9e7236..b1b97f0 100644
+--- a/OnCampApp/MainViews/TabBar/TabBar.swift
++++ b/OnCampApp/MainViews/TabBar/TabBar.swift
+@@ -33,7 +33,7 @@ struct tabBar: View {
+                     }
+                     .onAppear {selectedtab = 1}
+                     .tag(1)
+-                Marketplace()
++                Marketplace(user: user)
+                     .tabItem {
+                         Image(systemName: selectedtab == 2 ? "bag.fill" : "bag")
+                             .environment(\.symbolVariants, selectedtab == 2 ? .fill : .none)
+diff --git a/OnCampApp/MainViews/Vendors/MarketPlaceViewModel.swift b/OnCampApp/MainViews/Vendors/MarketPlaceViewModel.swift
+index 4c23106..64c1c7f 100644
+--- a/OnCampApp/MainViews/Vendors/MarketPlaceViewModel.swift
++++ b/OnCampApp/MainViews/Vendors/MarketPlaceViewModel.swift
+@@ -1,8 +1,41 @@
+-//
+-//  MarketPlaceViewModel.swift
+-//  OnCampApp
+-//
+-//  Created by Michael Washington on 1/17/24.
+-//
+-
+ import Foundation
++
++@MainActor
++class MarketplaceViewModel: ObservableObject {
++    @Published var vendorsByCategory: [String: [Vendor]] = [:]
++    private var vendorData = VendorData() // Assuming this contains the necessary methods
++
++    // Initializer
++    init() {
++        Task {
++            await fetchVendors()
++        }
++    }
++
++    // Asynchronously fetch vendors and organize them by category
++    private func fetchVendors() async {
++        do {
++            let vendorIds = try await vendorData.fetchVendorIds()
++            var fetchedVendors: [Vendor] = []
++            
++            for vendorId in vendorIds {
++                let vendor = try await vendorData.getVendorData(vendorID: vendorId)
++                fetchedVendors.append(vendor)
++            }
++
++            // Organizing fetched vendors by category
++            organizeVendorsByCategory(vendors: fetchedVendors)
++
++        } catch {
++            // Handle any errors
++            print("Error fetching vendors: \(error.localizedDescription)")
++        }
++    }
++
++    // Helper function to organize vendors into categories
++    private func organizeVendorsByCategory(vendors: [Vendor]) {
++        for vendor in vendors {
++            vendorsByCategory[vendor.category, default: []].append(vendor)
++        }
++    }
++}
+diff --git a/OnCampApp/MainViews/Vendors/Marketplace.swift b/OnCampApp/MainViews/Vendors/Marketplace.swift
+index 4254297..788300f 100644
+--- a/OnCampApp/MainViews/Vendors/Marketplace.swift
++++ b/OnCampApp/MainViews/Vendors/Marketplace.swift
+@@ -1,41 +1,51 @@
+ import SwiftUI
+ 
+-// Assuming the Vendor and CategoryModel structs are defined elsewhere in your project
+-
+ struct Marketplace: View {
+-    @State var selectedCategory = "AUCS"
+-    @StateObject var vendorData = VendorData()
++    @State var selectedCategory = "All"
++    @State private var searchText = ""
++    @StateObject var viewModel = MarketplaceViewModel()
++    let user: User?
+ 
+     var body: some View {
+-        NavigationView {
++        NavigationStack {
+             ScrollView {
+                 VStack {
+-                    // Header with Search
+                     HStack {
+-                        Image(systemName: "magnifyingglass")
+-                            .foregroundColor(.gray)
++                        Text("Vendor")
++                            .foregroundColor(.blue)
++                            .padding(.trailing, -8.0)
++                        Text("Hub")
++                    }
++                    .font(.title)
+ 
+-                        TextField("Search for vendors...", text: $selectedCategory)
+-                            .textFieldStyle(RoundedBorderTextFieldStyle())
++                    // Search Bar
++                    HStack {
++                        Image(systemName: "magnifyingglass")
++                            .foregroundColor(.blue)
+ 
+-                        Spacer()
++                        TextField("Search for vendors...", text: $searchText)
++                            .padding(8)
+ 
+-                        NavigationLink(destination: EmptyView()) {
++                        NavigationLink(destination: SideMenu(user: user)) {
+                             Image(systemName: "line.3.horizontal")
+-                                .padding()
++                                .font(.system(size: 30))
+                         }
+                     }
+-                    .padding()
+-                    .background(Color.white)
++                    .padding(.horizontal)
++                    .background(
++                        RoundedRectangle(cornerRadius: 20)
++                            .stroke(Color.blue, lineWidth: 2)
++                    )
++                    .padding(.horizontal)
+ 
+                     // Categories Scroller
+                     ScrollView(.horizontal, showsIndicators: false) {
+-                        HStack(spacing: 20) {
++                        HStack(spacing: 10) {
+                             ForEach(categoryList, id: \.id) { category in
+                                 Button(action: {
+                                     selectedCategory = category.title
+                                 }) {
+-                                    CategoryItem(category: category)
++                                    CategoryItem(category: category, isSelected: selectedCategory == category.title)
+                                 }
+                             }
+                         }
+@@ -44,33 +54,43 @@ struct Marketplace: View {
+                     .background(Color.white)
+ 
+                     // Dynamically create VendorSection views based on categories
+-                    ForEach(vendorData.vendorsByCategory.keys.sorted(), id: \.self) { category in
+-                        VendorSection(title: category, vendors: vendorData.vendorsByCategory[category] ?? [])
++                    ForEach(viewModel.vendorsByCategory.keys.sorted(), id: \.self) { category in
++                        VendorSection(title: category, vendors: viewModel.vendorsByCategory[category] ?? [])
+                     }
+                 }
+             }
+             .navigationBarHidden(true)
+         }
+-        .onAppear {
+-            vendorData.sortSampleVendorsByCategory()
+-        }
+     }
+ }
++extension View {
++    func placeholder<Content: View>(
++        when shouldShow: Bool,
++        alignment: Alignment = .leading,
++        @ViewBuilder placeholder: () -> Content) -> some View {
++            
++            ZStack(alignment: alignment) {
++                placeholder().opacity(shouldShow ? 1 : 0)
++                self
++            }
++        }
++}
+ 
+ struct VendorSection: View {
+     var title: String
+     var vendors: [Vendor]
+-
++    
+     var body: some View {
+         VStack(alignment: .leading, spacing: 10) {
+             Text(title)
+                 .font(.headline)
+                 .padding(.horizontal)
+-
++            
+             ScrollView(.horizontal, showsIndicators: false) {
+-                HStack {
++                HStack(spacing: 20) {
+                     ForEach(vendors, id: \.name) { vendor in
+                         VendorPreview(vendor: vendor)
++                            .shadow(color: .gray, radius: 5, x: 0, y: 2)
+                     }
+                 }
+                 .padding(.horizontal)
+@@ -79,24 +99,32 @@ struct VendorSection: View {
+     }
+ }
+ 
+-
+-
+ struct CategoryItem: View {
+     var category: CategoryModel
+-
++    var isSelected: Bool
++    
+     var body: some View {
+-        VStack {
+-            // Replace with actual icon and title views
+-            Image(systemName: category.icon)
++        HStack {
++            if category.title != "All" {
++                Image(systemName: category.icon)
++                    .foregroundColor(isSelected ? .white : .blue)
++            }
+             Text(category.title)
++                .fontWeight(isSelected ? .bold : .regular)
+         }
++        .padding(.vertical, 8)
++        .padding(.horizontal, 20)
++        .background(isSelected ? .blue : .gray.opacity(0.1))
++        .foregroundColor(isSelected ? .white : .black)
++        .clipShape(Capsule())
+     }
+ }
+ 
+-struct Marketplace_Previews: PreviewProvider {
+-    static var previews: some View {
+-        Marketplace()
+-    }
+-}
+ 
+-// Add here any additional structs or extensions needed, such as CategoryModel, etc.
++//struct Marketplace_Previews: PreviewProvider {
++//    static var previews: some View {
++//        Marketplace()
++//    }
++//}
++
++// Assuming Vendor, VendorData, and CategoryModel structs are defined elsewhere
+diff --git a/OnCampApp/MainViews/Vendors/vendor preview.swift b/OnCampApp/MainViews/Vendors/vendor preview.swift
+index 1f1a362..11d2246 100644
+--- a/OnCampApp/MainViews/Vendors/vendor preview.swift	
++++ b/OnCampApp/MainViews/Vendors/vendor preview.swift	
+@@ -5,6 +5,13 @@
+ //  Created by Elijah Smith on 12/28/23.
+ //
+ 
++//
++//  vendor preview.swift
++//  OnCampApp
++//
++//  Created by Elijah Smith on 12/28/23.
++//
++
+ import SwiftUI
+ import Kingfisher
+ 
+@@ -14,7 +21,7 @@ struct VendorPreview: View {
+     var body: some View {
+         NavigationLink(destination: VendorDetail(vendor: vendor)) {
+             VStack(spacing: 8) {
+-                KFImage(URL(string: vendor.image ))
++                KFImage(URL(string: vendor.headerImage ))
+                     .resizable()
+                     .placeholder {
+                         Image("placeholder") // Replace with your placeholder image
+@@ -34,10 +41,10 @@ struct VendorPreview: View {
+                             .font(.headline)
+ 
+                         Text(vendor.category)
+-                            .font(.caption)
++                            .font(.callout)
+                         
+-                        Text(vendor.description)
+-                            .font(.caption)
++                        StarRating(vendor: vendor)
++
+                     }
+                     
+                     Spacer()
+@@ -45,24 +52,26 @@ struct VendorPreview: View {
+                     // Pricing or other info
+                     VStack(alignment: .trailing) {
+                         Text("Avg. Price")
+-                            .font(.caption)
++                            .font(.callout)
+ 
+                         Text("$10 - $20")
+-                            .font(.caption)
++                            .font(.callout)
+                     }
+                 }
+             }
+             .padding()
+             .background(Color.white)
+             .cornerRadius(10)
+-            .shadow(radius: 5)
++            .shadow(color: .blue, radius: 2, x: 0, y: 4)
++
+         }
+     }
+ }
+ 
+ 
+-struct VendorPreview_Previews: PreviewProvider {
+-    static var previews: some View {
+-        VendorPreview(vendor: Vendor(description: "Description", schools: ["Morehouse","Spelman","Clark Atlanta"], name: "New Hairstylist", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.3, featured: false))
+-    }
+-}
++
++//struct VendorPreview_Previews: PreviewProvider {
++//    static var previews: some View {
++//        VendorPreview(vendor: Vendor(description: "Description", schools: ["Morehouse","Spelman","Clark Atlanta"], name: "New Hairstylist", image: "https://source.unsplash.com/random/300x300", category: "Hair", rating: 4.3, featured: false))
++//    }
++//}
+diff --git a/OnCampApp/viewModels/eventViewModel.swift b/OnCampApp/viewModels/eventViewModel.swift
+index 35ced21..668fdcc 100644
+--- a/OnCampApp/viewModels/eventViewModel.swift
++++ b/OnCampApp/viewModels/eventViewModel.swift
+@@ -6,3 +6,35 @@
+ //
+ 
+ import Foundation
++@MainActor
++class eventViewModel: ObservableObject {
++    @Published var events: [Event] = []
++    private var eventData = EventData() // Assuming EventData contains the necessary methods
++
++    // Initializer
++    init() {
++        Task {
++            await fetchEvents()
++        }
++    }
++
++    // Asynchronously fetch events
++    private func fetchEvents() async {
++        do {
++            let eventIds = try await eventData.fetchEventIds()
++            var fetchedEvents: [Event] = []
++
++            for eventId in eventIds {
++                let event = try await eventData.getEventData(eventID: eventId)
++                fetchedEvents.append(event)
++            }
++
++            // Update the published events array
++            self.events = fetchedEvents
++
++        } catch {
++            // Handle any errors
++            print("Error fetching events: \(error.localizedDescription)")
++        }
++    }
++}

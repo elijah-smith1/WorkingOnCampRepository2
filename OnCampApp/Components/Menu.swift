@@ -1,18 +1,53 @@
+
 //
 //  Menu.swift
 //  OnCampApp
 //
-//  Created by Michael Washington on 1/17/24.
+//  Created by Michael Washington on 11/15/23.
 //
 
 import SwiftUI
 
-struct Menu: View {
+struct VendorMenu: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Spacer()
+                
+                NavigationLink("Become a Vendor", destination: EmptyView())
+                
+                Spacer()
+            }
+            VStack{
+                Divider()
+                
+                Spacer()
+                
+                NavigationLink("Go to VendorHub", destination: EmptyView())
+                
+                Spacer()
+            }
+            VStack{
+                Divider()
+                
+                Spacer()
+                
+                NavigationLink("My Orders", destination: EmptyView())
+                
+                Spacer()
+                
+                Divider()
+                
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(Color.white)
+        }
     }
+    
 }
 
-#Preview {
-    Menu()
+struct Menu_Previews: PreviewProvider {
+    static var previews: some View {
+        VendorMenu()
+    }
 }

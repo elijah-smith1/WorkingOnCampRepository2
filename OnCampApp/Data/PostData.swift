@@ -41,6 +41,7 @@ struct Post: Codable, Hashable, Identifiable {  // Conform to Codable and Identi
 }
 @MainActor
 class PostData: ObservableObject {
+    @Published var isLiked: Bool = false
     static let shared = PostData()
     @Published var posts: [Post] = []  // This will hold your posts and notify observers of any changes
 
@@ -197,48 +198,56 @@ class PostData: ObservableObject {
 
 
     func likePost(postID: String ) {
-        let userID = Auth.auth().currentUser!.uid
+        guard let userID = Auth.auth().currentUser?.uid else {
+            print("User not logged in")
+            return
+        }
+
         let db = Firestore.firestore()
         let postRef = db.collection("Posts").document(postID)
         let userRef = db.collection("Users").document(userID)
-     
-        
-        
-        // Fetch the post document
-        postRef.getDocument { (document, error) in
+
+        // Check if the post is already liked by the user
+        postRef.collection("likes").document(userID).getDocument { (document, error) in
+            if let error = error {
+                print("Error checking like status: \(error.localizedDescription)")
+                return
+            }
+
             if let document = document, document.exists {
-                // Get the current likeCount
-                let currentLikeCount = document.data()?["likeCount"] as? Int ?? 0
-                
-                // Update the likeCount
-                let newLikeCount = currentLikeCount + 1
-                postRef.updateData(["likeCount": newLikeCount]) { error in
+                // Post is already liked by the user, so unlike it
+                postRef.collection("likes").document(userID).delete() { error in
                     if let error = error {
-                        print("Error updating likeCount: \(error.localizedDescription)")
+                        print("Error unliking post: \(error.localizedDescription)")
                     } else {
-                        // Add the user's ID to the post's likes subcollection
-                        postRef.collection("likes").document(userID).setData([:]) { error in
+                        userRef.collection("likes").document(postID).delete() { error in
                             if let error = error {
-                                print("Error adding user to likes subcollection: \(error.localizedDescription)")
+                                print("Error removing liked post from user's collection: \(error.localizedDescription)")
                             } else {
-                                // Add the liked post's ID to the user's likes collection
-                                userRef.collection("likes").document(postID).setData([:]) { error in
-                                    if let error = error {
-                                        print("Error adding liked post to user's likes collection: \(error.localizedDescription)")
-                                    } else {
-                                        print("Post liked successfully!")
-                                    }
-                                }
+                                print("Post unliked successfully!")
                             }
                         }
                     }
                 }
             } else {
-                print("Post not found")
+
+                postRef.collection("likes").document(userID).setData([:]) { error in
+                    if let error = error {
+                        print("Error liking post: \(error.localizedDescription)")
+                    } else {
+                        userRef.collection("likes").document(postID).setData([:]) { error in
+                            if let error = error {
+                                print("Error adding liked post to user's collection: \(error.localizedDescription)")
+                            } else {
+                                print("Post liked successfully!")
+                            }
+                        }
+                    }
+                }
             }
         }
     }
-
+    
     func repostPost(postID: String) {
         let userID = Auth.auth().currentUser!.uid
         let db = Firestore.firestore()

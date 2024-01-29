@@ -1,9 +1,10 @@
 //
-//  DeleteAccountButton.swift
+//  DeleteAccount.swift
 //  OnCampApp
 //
-//  Created by Michael Washington on 10/13/23.
+//  Created by Michael Washington on 1/28/24.
 //
+
 
 import SwiftUI
 import Firebase

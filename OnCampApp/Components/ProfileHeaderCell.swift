@@ -14,121 +14,103 @@ struct ProfileHeaderCell: View {
     @StateObject var viewModel = ProfileViewModel()
     @StateObject var followFunc = UserData()
     @State private var followingStatus: String = "NotFollowing"
-
+    
     var body: some View {
         
         VStack(spacing: 20) {
-       
-                HStack {
-                    VStack(alignment: .leading, spacing: 12) {
-                        VStack(alignment: .leading, spacing: 4) {
-                            Text(user!.username)
-                                .font(.title2)
-                                .fontWeight(.semibold)
-                            
-                            Text(user!.school)
-                                .font(.subheadline)
-                            
-
-                            Text(user!.status)
-                                .font(.subheadline)
-                            
-                        }
+            
+            HStack {
+                VStack(alignment: .leading, spacing: 12) {
+                    VStack(alignment: .leading, spacing: 4) {
+                        Text(user!.username)
+                            .font(.title2)
+                            .fontWeight(.semibold)
                         
-                        Text(user!.bio)
-                            .font(.footnote)
-                        HStack{
-                            Text("\(viewModel.followerCount) followers")
-                                .font(.caption)
-                                .foregroundColor(Color("LTBL"))
-                            
-                            Text("\(viewModel.followingCount) following")
-                                .font(.caption)
-                                .foregroundColor(Color("LTBL"))
-                        }
+                        Text(user!.school)
+                            .font(.subheadline)
+                        
+                        
+                        Text(user!.status)
+                            .font(.subheadline)
+                        
                     }
                     
-                    Spacer()
-                    
-                    CircularProfilePictureView(profilePictureURL: user?.pfpUrl)
-                        .frame(width: 64, height: 64)
+                    Text(user!.bio)
+                        .font(.footnote)
+                    HStack{
+                        Text("\(viewModel.followerCount) followers")
+                            .font(.caption)
+                            .foregroundColor(Color("LTBL"))
+                        
+                        Text("\(viewModel.followingCount) following")
+                            .font(.caption)
+                            .foregroundColor(Color("LTBL"))
+                    }
                 }
                 
-                // Conditional button rendering
-                if followingStatus == "Following" {
-                    HStack {
-                        Button("Unfollow") {
-                            Task {
-                                try await followFunc.followOrUnfollowUser(selectedUid: user?.id ?? "")
-                                followingStatus = "NotFollowing"
-                            }
-                        }
-                        .buttonStyle(CustomButtonStyle())
-                        
-                        Button("Favorite") {
-                            // Implement favorite logic here
-                            Task {
-                                try await followFunc.favoriteOrUnfavoriteUser(selectedUid: user?.id ?? "")
-                                followingStatus = "FollowingAndFavorite"
-                            }
-                        }
-                        .buttonStyle(CustomButtonStyle())
-                    }
-                } else if followingStatus == "FollowingAndFavorite" {
-                    HStack {
-                        Button("Unfollow") {
-                            Task {
-                                try await followFunc.followOrUnfollowUser(selectedUid: user?.id ?? "")
-                                followingStatus = "NotFollowing"
-                            }
-                        }
-                        .buttonStyle(CustomButtonStyle())
-                        
-                        Button("Unfavorite") {
-                            
-                            Task {
-                                try await followFunc.favoriteOrUnfavoriteUser(selectedUid: user?.id ?? "")
-                                followingStatus = "Following"
-                            }
-                        }
-                        .buttonStyle(CustomButtonStyle())
-                    }
-                } else if followingStatus == "NotFollowing" {
-                    Button("Follow") {
+                Spacer()
+                
+                CircularProfilePictureView(profilePictureURL: user?.pfpUrl)
+                    .frame(width: 80, height: 80)
+            }
+            
+            // Conditional button rendering
+            if followingStatus == "Following" {
+                HStack {
+                    Button("Unfollow") {
                         Task {
                             try await followFunc.followOrUnfollowUser(selectedUid: user?.id ?? "")
-                            followingStatus = "Following"
+                            followingStatus = "NotFollowing"
                         }
                     }
                     .buttonStyle(CustomButtonStyle())
-                } else if followingStatus == "OwnSelf" {
                     
-                    
-                        HStack {
-                            NavigationLink(destination: editProfileView()) {
-                                Text("Edit Profile")
-                                    .padding()
-                                    .background(Color.blue)
-                                    .foregroundColor(.white)
-                                    .cornerRadius(8)
-                            }
-                        
+                    Button("Favorite") {
+                        // Implement favorite logic here
+                        Task {
+                            try await followFunc.favoriteOrUnfavoriteUser(selectedUid: user?.id ?? "")
+                            followingStatus = "FollowingAndFavorite"
+                        }
                     }
+                    .buttonStyle(CustomButtonStyle())
                 }
-                
-            }.onAppear {
-                Task {
-                    followingStatus = try await followFunc.checkFollowingAndFavoriteStatus(selectedUid: user?.id ?? "")
+            } else if followingStatus == "OwnSelf" {
+                HStack {
+                    Spacer()
+                    
+                    NavigationLink(destination: editProfileView()) {
+                        Text("Edit Profile")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .padding()
+                            .background(Color.blue)
+                            .foregroundColor(.white)
+                            .cornerRadius(8)
+                    }
+
+                    NavigationLink(destination: Settings()) {
+                        Image(systemName: "gear")
+                            .imageScale(.large)
+                            .padding(.trailing, 12)
+                    }
+
+                    Spacer()
                 }
-                viewModel.setupListeners(forUserID: user?.id ?? "")
             }
-            .onDisappear {
-                viewModel.tearDownListeners()
+
+
+        }.onAppear {
+            Task {
+                followingStatus = try await followFunc.checkFollowingAndFavoriteStatus(selectedUid: user?.id ?? "")
             }
-            
-            .padding(.horizontal, 12.0)
+            viewModel.setupListeners(forUserID: user?.id ?? "")
         }
+        .onDisappear {
+            viewModel.tearDownListeners()
+        }
+        
+        .padding(.horizontal, 12.0)
     }
+}
 
 
 struct CustomButtonStyle: ButtonStyle {

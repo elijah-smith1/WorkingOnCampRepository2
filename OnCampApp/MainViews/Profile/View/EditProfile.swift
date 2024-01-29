@@ -19,7 +19,6 @@ struct editProfileView: View {
                     .edgesIgnoringSafeArea([.bottom, .horizontal])
                 
                 VStack {
-                    Signoutbutton()
                     HStack {
                         VStack(alignment: .leading) {
                             Text("Name")
@@ -57,24 +56,7 @@ struct editProfileView: View {
             }
             .navigationTitle("Edit Profile")
             .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button("Cancel") {
-                        
-                    }
-                    .font(.subheadline)
-                    .foregroundColor(Color("LTBL"))
-                }
-                
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Done") {
-                        
-                    }
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .foregroundColor(Color("LTBL"))
-                }
-            }
+
         }
     }
 }
