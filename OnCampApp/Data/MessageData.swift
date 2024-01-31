@@ -17,7 +17,7 @@ struct Chats: Identifiable, Codable {
 
 struct Message: Identifiable, Codable {
     @DocumentID var id: String?
-    var senderId: Sring
+    var senderId: String
     var content: String
     var timestamp: Date
     var read: Bool

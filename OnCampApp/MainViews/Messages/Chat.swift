@@ -14,10 +14,6 @@ struct Chat: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
                     ForEach(messages, id: \.id) { message in
-                        if index == messages.count - 1 {
-                                                    // Display timestamp for the most recent message
-                                                    Timestamp(date: message.date)
-                                                }
                         DetailedChatBubbles(isFromCurrentUser: message.senderId == loggedInUid, message: message)
                     }
                 }

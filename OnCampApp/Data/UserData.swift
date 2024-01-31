@@ -299,15 +299,19 @@ class UserData : ObservableObject {
     
     func fetchUser(for userId: String) async throws -> User {
         let userDocument = Userdb.document(userId)
-        
         let documentSnapshot = try await userDocument.getDocument()
-        
-        guard let user = try documentSnapshot.data(as: User.self) else {
-            throw NSError(domain: "UserDataService", code: 0, userInfo: [NSLocalizedDescriptionKey: "User not found"])
+
+        let user: User
+        do {
+            user = try documentSnapshot.data(as: User.self)
+        } catch {
+            print("error fetching user: \(error)")
+            throw error // Propagate the error upwards
         }
-        
+         
         return user
     }
+
 }
 
 
